@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4580647A2423E50141E4EB8B'
+               BlueprintIdentifier = '924DB2499DE6B3D2FCF0C7DC'
                BlueprintName = 'GRMustache'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libGRMustache.a'>

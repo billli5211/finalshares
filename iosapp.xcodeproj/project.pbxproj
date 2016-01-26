@@ -22,6 +22,14 @@
 		00FF954519F2B37E002F4737 /* UIColor+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF954419F2B37E002F4737 /* UIColor+Util.m */; };
 		00FF954819F2BF8B002F4737 /* LastCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF954719F2BF8B002F4737 /* LastCell.m */; };
 		00FF954E19F3E5FF002F4737 /* SwipableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00FF954D19F3E5FF002F4737 /* SwipableViewController.m */; };
+		092E0D731C5763A2001AAF79 /* CheckMarkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D6F1C5763A2001AAF79 /* CheckMarkWhite.png */; };
+		092E0D741C5763A2001AAF79 /* ForkImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D701C5763A2001AAF79 /* ForkImage.png */; };
+		092E0D751C5763A2001AAF79 /* HeaderImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D711C5763A2001AAF79 /* HeaderImage.png */; };
+		092E0D761C5763A2001AAF79 /* Toronto, ON.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D721C5763A2001AAF79 /* Toronto, ON.jpg */; };
+		092E0D7D1C5763EE001AAF79 /* MYCustomPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D791C5763EE001AAF79 /* MYCustomPanel.m */; };
+		092E0D7E1C5763EE001AAF79 /* MYCustomPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7A1C5763EE001AAF79 /* MYCustomPanel.xib */; };
+		092E0D7F1C5763EE001AAF79 /* TestHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7B1C5763EE001AAF79 /* TestHeader.xib */; };
+		092E0D801C5763EE001AAF79 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */; };
 		3118F8D31AFB4803001684BC /* TeamMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */; };
 		3118F8D61AFB49CD001684BC /* MemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D51AFB49CD001684BC /* MemberDetailCell.m */; };
 		31405BE91AF07453000A487D /* TeamIssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31405BE81AF07453000A487D /* TeamIssueListViewController.m */; };
@@ -263,6 +271,15 @@
 		00FF954719F2BF8B002F4737 /* LastCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LastCell.m; sourceTree = "<group>"; };
 		00FF954C19F3E5FF002F4737 /* SwipableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipableViewController.h; sourceTree = "<group>"; };
 		00FF954D19F3E5FF002F4737 /* SwipableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipableViewController.m; sourceTree = "<group>"; };
+		092E0D6F1C5763A2001AAF79 /* CheckMarkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = CheckMarkWhite.png; path = images/CheckMarkWhite.png; sourceTree = "<group>"; };
+		092E0D701C5763A2001AAF79 /* ForkImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ForkImage.png; path = images/ForkImage.png; sourceTree = "<group>"; };
+		092E0D711C5763A2001AAF79 /* HeaderImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeaderImage.png; path = images/HeaderImage.png; sourceTree = "<group>"; };
+		092E0D721C5763A2001AAF79 /* Toronto, ON.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Toronto, ON.jpg"; path = "images/Toronto, ON.jpg"; sourceTree = "<group>"; };
+		092E0D781C5763EE001AAF79 /* MYCustomPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MYCustomPanel.h; path = IntroductionPanel/MYCustomPanel.h; sourceTree = "<group>"; };
+		092E0D791C5763EE001AAF79 /* MYCustomPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MYCustomPanel.m; path = IntroductionPanel/MYCustomPanel.m; sourceTree = "<group>"; };
+		092E0D7A1C5763EE001AAF79 /* MYCustomPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MYCustomPanel.xib; path = IntroductionPanel/MYCustomPanel.xib; sourceTree = "<group>"; };
+		092E0D7B1C5763EE001AAF79 /* TestHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestHeader.xib; path = IntroductionPanel/TestHeader.xib; sourceTree = "<group>"; };
+		092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestPanel3.xib; path = IntroductionPanel/TestPanel3.xib; sourceTree = "<group>"; };
 		3118F8D11AFB4803001684BC /* TeamMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMemberDetailViewController.h; sourceTree = "<group>"; };
 		3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMemberDetailViewController.m; sourceTree = "<group>"; };
 		3118F8D41AFB49CD001684BC /* MemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberDetailCell.h; sourceTree = "<group>"; };
@@ -797,6 +814,29 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		092E0D6E1C576386001AAF79 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D6F1C5763A2001AAF79 /* CheckMarkWhite.png */,
+				092E0D701C5763A2001AAF79 /* ForkImage.png */,
+				092E0D711C5763A2001AAF79 /* HeaderImage.png */,
+				092E0D721C5763A2001AAF79 /* Toronto, ON.jpg */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		092E0D771C5763CC001AAF79 /* IntroductionPanel */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D781C5763EE001AAF79 /* MYCustomPanel.h */,
+				092E0D791C5763EE001AAF79 /* MYCustomPanel.m */,
+				092E0D7A1C5763EE001AAF79 /* MYCustomPanel.xib */,
+				092E0D7B1C5763EE001AAF79 /* TestHeader.xib */,
+				092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */,
+			);
+			name = IntroductionPanel;
+			sourceTree = "<group>";
+		};
 		1BB5019F31BE469F592E0B67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1104,6 +1144,7 @@
 		386039661A0A34F5007C9B88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D6E1C576386001AAF79 /* images */,
 				C5B123191B316830000B29D2 /* css */,
 				C5B1231A1B316830000B29D2 /* html */,
 				C5B1231B1B316830000B29D2 /* js */,
@@ -1475,6 +1516,7 @@
 		C54689FC1BD1EFC400D49223 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D771C5763CC001AAF79 /* IntroductionPanel */,
 				31ABF57F1B0F1B5300663C08 /* JKAlertDialog.h */,
 				31ABF5801B0F1B5300663C08 /* JKAlertDialog.m */,
 				C57E7B551B56734300F39B5C /* PlaceholderTextView.h */,
@@ -1881,9 +1923,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092E0D7F1C5763EE001AAF79 /* TestHeader.xib in Resources */,
 				C5E56F531B56B58B0059924C /* Discover.storyboard in Resources */,
+				092E0D741C5763A2001AAF79 /* ForkImage.png in Resources */,
 				C5E56F4D1B56AFB50059924C /* Main.storyboard in Resources */,
 				38DB5E8F1A496FFD0092C966 /* emoji.plist in Resources */,
+				092E0D731C5763A2001AAF79 /* CheckMarkWhite.png in Resources */,
+				092E0D801C5763EE001AAF79 /* TestPanel3.xib in Resources */,
 				38CC81EC1AE6517E00CC4F6F /* emojiToText.plist in Resources */,
 				C5E4B17E1B57B715008E7463 /* Login.storyboard in Resources */,
 				C5B1231E1B316830000B29D2 /* js in Resources */,
@@ -1891,8 +1937,11 @@
 				C5A89C3C1B09C59400798B1C /* FontAwesome.ttf in Resources */,
 				C5E56F411B56AAAF0059924C /* News.storyboard in Resources */,
 				C5B1231C1B316830000B29D2 /* css in Resources */,
+				092E0D761C5763A2001AAF79 /* Toronto, ON.jpg in Resources */,
 				EE82D0441C43B1E30066FDC9 /* FeedBackViewController.xib in Resources */,
 				C5E92FDE1B59FAC300EFE47E /* Homepage.storyboard in Resources */,
+				092E0D7E1C5763EE001AAF79 /* MYCustomPanel.xib in Resources */,
+				092E0D751C5763A2001AAF79 /* HeaderImage.png in Resources */,
 				00D6BCEE19EB673200E8754E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1997,6 +2046,7 @@
 				31697BCA1B16FB0E001FE346 /* MZDay.m in Sources */,
 				38590C1D1A1240E5008E2CFA /* UIImageView+Util.m in Sources */,
 				3838D1AD1A6F463E00CC7913 /* RandomMessageCell.m in Sources */,
+				092E0D7D1C5763EE001AAF79 /* MYCustomPanel.m in Sources */,
 				38BC204D1A07643A00B8BB16 /* OSCPostDetails.m in Sources */,
 				C52BF4E71AF9AAA000E53508 /* TeamWeeklyReportDetail.m in Sources */,
 				38A9EEA91AA95AB4006C95BD /* AboutPage.m in Sources */,

@@ -7,7 +7,8 @@
 //
 
 #import "RESideMenu.h"
+#import "MYBlurIntroductionView.h"
 
-@interface RootViewController : RESideMenu
+@interface RootViewController : RESideMenu <MYIntroductionDelegate>
 
 @end
