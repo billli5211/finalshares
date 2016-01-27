@@ -14,6 +14,7 @@
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+
 #ifdef DEBUG
 #define debugLog(...) NSLog(__VA_ARGS__)
 #define debugMethod() NSLog(@"%s", __func__)
@@ -21,5 +22,8 @@
 #define debugLog(...)
 #define debugMethod()
 #endif
+
+#import "ModuleCustom.h"
+#import "StyleCustom.h"
 
 #endif

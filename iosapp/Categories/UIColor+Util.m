@@ -9,6 +9,8 @@
 #import "UIColor+Util.h"
 #import "AppDelegate.h"
 
+#import "StyleCustom.h"
+
 @implementation UIColor (Util)
 
 #pragma mark - Hex
@@ -72,9 +74,9 @@
 + (UIColor *)titleBarColor
 {
     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
-        return  [UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1.0];
+        return  [UIColor colorWithRed:kTitleBarNightColors[0] green:kTitleBarNightColors[1] blue:kTitleBarNightColors[2] alpha:1.0];
     }
-    return [UIColor colorWithHex:0xE1E1E1];
+    return [UIColor colorWithHex:kTitleBarColor];
 }
 
 + (UIColor *)contentTextColor
@@ -98,9 +100,9 @@
 + (UIColor *)navigationbarColor
 {
     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode) {
-        return [UIColor colorWithRed:0.067 green:0.282 blue:0.094 alpha:1.0];
+        return [UIColor colorWithRed:kNavigationBarNightColors[0] green:kNavigationBarNightColors[1] blue:kNavigationBarNightColors[2] alpha:1.0];
     }
-    return [UIColor colorWithHex:0x15A230];//0x009000
+    return [UIColor colorWithHex:kNavigationBarColor];
 }
 
 + (UIColor *)selectCellSColor

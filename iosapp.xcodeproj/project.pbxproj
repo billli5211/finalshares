@@ -30,6 +30,8 @@
 		092E0D7E1C5763EE001AAF79 /* MYCustomPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7A1C5763EE001AAF79 /* MYCustomPanel.xib */; };
 		092E0D7F1C5763EE001AAF79 /* TestHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7B1C5763EE001AAF79 /* TestHeader.xib */; };
 		092E0D801C5763EE001AAF79 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */; };
+		092E0D891C587C52001AAF79 /* ModuleCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D871C587C52001AAF79 /* ModuleCustom.m */; };
+		092E0D8A1C587C52001AAF79 /* StyleCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D881C587C52001AAF79 /* StyleCustom.m */; };
 		3118F8D31AFB4803001684BC /* TeamMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */; };
 		3118F8D61AFB49CD001684BC /* MemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D51AFB49CD001684BC /* MemberDetailCell.m */; };
 		31405BE91AF07453000A487D /* TeamIssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31405BE81AF07453000A487D /* TeamIssueListViewController.m */; };
@@ -280,6 +282,10 @@
 		092E0D7A1C5763EE001AAF79 /* MYCustomPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MYCustomPanel.xib; path = IntroductionPanel/MYCustomPanel.xib; sourceTree = "<group>"; };
 		092E0D7B1C5763EE001AAF79 /* TestHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestHeader.xib; path = IntroductionPanel/TestHeader.xib; sourceTree = "<group>"; };
 		092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TestPanel3.xib; path = IntroductionPanel/TestPanel3.xib; sourceTree = "<group>"; };
+		092E0D851C587C0E001AAF79 /* ModuleCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleCustom.h; sourceTree = "<group>"; };
+		092E0D861C587C0E001AAF79 /* StyleCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleCustom.h; sourceTree = "<group>"; };
+		092E0D871C587C52001AAF79 /* ModuleCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleCustom.m; sourceTree = "<group>"; };
+		092E0D881C587C52001AAF79 /* StyleCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleCustom.m; sourceTree = "<group>"; };
 		3118F8D11AFB4803001684BC /* TeamMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMemberDetailViewController.h; sourceTree = "<group>"; };
 		3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMemberDetailViewController.m; sourceTree = "<group>"; };
 		3118F8D41AFB49CD001684BC /* MemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberDetailCell.h; sourceTree = "<group>"; };
@@ -729,6 +735,7 @@
 		00D6BCDC19EB673200E8754E /* iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D841C587C0E001AAF79 /* Customization */,
 				C5468A031BD1F51B00D49223 /* Application */,
 				00C9A73919EE8536000EA878 /* Models */,
 				C54689FD1BD1F02300D49223 /* Controllers */,
@@ -835,6 +842,17 @@
 				092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */,
 			);
 			name = IntroductionPanel;
+			sourceTree = "<group>";
+		};
+		092E0D841C587C0E001AAF79 /* Customization */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D871C587C52001AAF79 /* ModuleCustom.m */,
+				092E0D881C587C52001AAF79 /* StyleCustom.m */,
+				092E0D851C587C0E001AAF79 /* ModuleCustom.h */,
+				092E0D861C587C0E001AAF79 /* StyleCustom.h */,
+			);
+			path = Customization;
 			sourceTree = "<group>";
 		};
 		1BB5019F31BE469F592E0B67 /* Frameworks */ = {
@@ -2020,6 +2038,7 @@
 				381EAB5919FE1FCF00C1937C /* OSCNews.m in Sources */,
 				C5EF89381BE319F600B5FA46 /* NewsCell.m in Sources */,
 				00C9A73D19EE863B000EA878 /* OSCBaseObject.m in Sources */,
+				092E0D8A1C587C52001AAF79 /* StyleCustom.m in Sources */,
 				C5D7C1111B14508E003EFE9B /* TableViewCell.m in Sources */,
 				3838D15C1A6C9D0900CC7913 /* OperationBar.m in Sources */,
 				382A95BB1A29D2C300AAAFEA /* EventsViewController.m in Sources */,
@@ -2050,6 +2069,7 @@
 				38BC204D1A07643A00B8BB16 /* OSCPostDetails.m in Sources */,
 				C52BF4E71AF9AAA000E53508 /* TeamWeeklyReportDetail.m in Sources */,
 				38A9EEA91AA95AB4006C95BD /* AboutPage.m in Sources */,
+				092E0D891C587C52001AAF79 /* ModuleCustom.m in Sources */,
 				38763A351A8DDF51008E6805 /* MessageBubbleCell.m in Sources */,
 				C5EF89231BE3194800B5FA46 /* SoftwareCell.m in Sources */,
 				38763A0A1A860A96008E6805 /* UserOperationCell.m in Sources */,

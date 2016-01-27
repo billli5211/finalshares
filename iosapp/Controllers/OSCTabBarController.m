@@ -30,6 +30,7 @@
 
 #import <RESideMenu/RESideMenu.h>
 
+#import "ModuleCustom.h"
 
 @interface OSCTabBarController () <UITabBarControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
@@ -168,13 +169,15 @@
                              discoverNav,
                              homepageNav,
                              ];
-    
+    /*
     NSArray *titles = @[@"综合", @"动弹", @"", @"发现", @"我"];
     NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"", @"tabbar-discover", @"tabbar-me"];
+     */
+    
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
-        [item setTitle:titles[idx]];
-        [item setImage:[UIImage imageNamed:images[idx]]];
-        [item setSelectedImage:[UIImage imageNamed:[images[idx] stringByAppendingString:@"-selected"]]];
+        [item setTitle:kTabItemTitles[idx]];
+        [item setImage:[UIImage imageNamed:kTabItemImages[idx]]];
+        [item setSelectedImage:[UIImage imageNamed:[kTabItemImages[idx] stringByAppendingString:@"-selected"]]];
     }];
     [self.tabBar.items[2] setEnabled:NO];
     
@@ -192,14 +195,16 @@
     _length = 60;        // 圆形按钮的直径
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
+    /*
     NSArray *buttonTitles = @[@"文字", @"相册", @"拍照", @"语音", @"扫一扫", @"找人"];
     NSArray *buttonImages = @[@"tweetEditing", @"picture", @"shooting", @"sound", @"scan", @"search"];
     int buttonColors[] = {0xe69961, 0x0dac6b, 0x24a0c4, 0xe96360, 0x61b644, 0xf1c50e};
+     */
     
     for (int i = 0; i < 6; i++) {
-        OptionButton *optionButton = [[OptionButton alloc] initWithTitle:buttonTitles[i]
-                                                                   image:[UIImage imageNamed:buttonImages[i]]
-                                                                andColor:[UIColor colorWithHex:buttonColors[i]]];
+        OptionButton *optionButton = [[OptionButton alloc] initWithTitle:kButtonTitles[i]
+                                                                   image:[UIImage imageNamed:kButtonImages[i]]
+                                                                andColor:[UIColor colorWithHex:kButtonColors[i]]];
         
         optionButton.frame = CGRectMake((_screenWidth/6 * (i%3*2+1) - (_length+16)/2),
                                         _screenHeight + 150 + i/3*100,
