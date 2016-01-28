@@ -32,6 +32,14 @@
 		092E0D801C5763EE001AAF79 /* TestPanel3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D7C1C5763EE001AAF79 /* TestPanel3.xib */; };
 		092E0D891C587C52001AAF79 /* ModuleCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D871C587C52001AAF79 /* ModuleCustom.m */; };
 		092E0D8A1C587C52001AAF79 /* StyleCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D881C587C52001AAF79 /* StyleCustom.m */; };
+		092E0D8E1C592A0C001AAF79 /* WeiboModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D8D1C592A0C001AAF79 /* WeiboModel.m */; };
+		092E0D991C592A24001AAF79 /* WeiboCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D911C592A24001AAF79 /* WeiboCell.m */; };
+		092E0D9A1C592A24001AAF79 /* WeiboDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D931C592A24001AAF79 /* WeiboDetailViewController.m */; };
+		092E0D9B1C592A24001AAF79 /* WeiboTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0D951C592A24001AAF79 /* WeiboTableViewController.m */; };
+		092E0D9D1C592A24001AAF79 /* Weibo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 092E0D981C592A24001AAF79 /* Weibo.storyboard */; };
+		092E0DA31C592A36001AAF79 /* WeiboViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA01C592A36001AAF79 /* WeiboViewModel.m */; };
+		092E0DA41C592A36001AAF79 /* ViewModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA21C592A36001AAF79 /* ViewModelClass.m */; };
+		092E0DA91C592A58001AAF79 /* NetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA71C592A58001AAF79 /* NetRequestClass.m */; };
 		3118F8D31AFB4803001684BC /* TeamMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */; };
 		3118F8D61AFB49CD001684BC /* MemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D51AFB49CD001684BC /* MemberDetailCell.m */; };
 		31405BE91AF07453000A487D /* TeamIssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31405BE81AF07453000A487D /* TeamIssueListViewController.m */; };
@@ -286,6 +294,22 @@
 		092E0D861C587C0E001AAF79 /* StyleCustom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleCustom.h; sourceTree = "<group>"; };
 		092E0D871C587C52001AAF79 /* ModuleCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleCustom.m; sourceTree = "<group>"; };
 		092E0D881C587C52001AAF79 /* StyleCustom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleCustom.m; sourceTree = "<group>"; };
+		092E0D8C1C592A0C001AAF79 /* WeiboModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboModel.h; sourceTree = "<group>"; };
+		092E0D8D1C592A0C001AAF79 /* WeiboModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboModel.m; sourceTree = "<group>"; };
+		092E0D901C592A24001AAF79 /* WeiboCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboCell.h; sourceTree = "<group>"; };
+		092E0D911C592A24001AAF79 /* WeiboCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboCell.m; sourceTree = "<group>"; };
+		092E0D921C592A24001AAF79 /* WeiboDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboDetailViewController.h; sourceTree = "<group>"; };
+		092E0D931C592A24001AAF79 /* WeiboDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboDetailViewController.m; sourceTree = "<group>"; };
+		092E0D941C592A24001AAF79 /* WeiboTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboTableViewController.h; sourceTree = "<group>"; };
+		092E0D951C592A24001AAF79 /* WeiboTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboTableViewController.m; sourceTree = "<group>"; };
+		092E0D981C592A24001AAF79 /* Weibo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Weibo.storyboard; sourceTree = "<group>"; };
+		092E0D9F1C592A36001AAF79 /* WeiboViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboViewModel.h; sourceTree = "<group>"; };
+		092E0DA01C592A36001AAF79 /* WeiboViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiboViewModel.m; sourceTree = "<group>"; };
+		092E0DA11C592A36001AAF79 /* ViewModelClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModelClass.h; sourceTree = "<group>"; };
+		092E0DA21C592A36001AAF79 /* ViewModelClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModelClass.m; sourceTree = "<group>"; };
+		092E0DA61C592A58001AAF79 /* NetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestClass.h; sourceTree = "<group>"; };
+		092E0DA71C592A58001AAF79 /* NetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestClass.m; sourceTree = "<group>"; };
+		092E0DA81C592A58001AAF79 /* WeiboConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboConfig.h; sourceTree = "<group>"; };
 		3118F8D11AFB4803001684BC /* TeamMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMemberDetailViewController.h; sourceTree = "<group>"; };
 		3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMemberDetailViewController.m; sourceTree = "<group>"; };
 		3118F8D41AFB49CD001684BC /* MemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberDetailCell.h; sourceTree = "<group>"; };
@@ -706,6 +730,7 @@
 		00C9A73919EE8536000EA878 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D8B1C592A0C001AAF79 /* Weibo */,
 				3843641B1AC5525800743CB0 /* OSC */,
 				3843641C1AC5527600743CB0 /* Team */,
 			);
@@ -735,6 +760,7 @@
 		00D6BCDC19EB673200E8754E /* iosapp */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D9E1C592A36001AAF79 /* ViewModel */,
 				092E0D841C587C0E001AAF79 /* Customization */,
 				C5468A031BD1F51B00D49223 /* Application */,
 				00C9A73919EE8536000EA878 /* Models */,
@@ -811,6 +837,8 @@
 		00EDF60C19EFC13500A5C842 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DA51C592A58001AAF79 /* Request */,
+				092E0DA81C592A58001AAF79 /* WeiboConfig.h */,
 				00EDF60D19EFF4B300A5C842 /* Utils.h */,
 				00EDF60E19EFF4B300A5C842 /* Utils.m */,
 				387794231A0B60C700C41C78 /* Config.h */,
@@ -853,6 +881,49 @@
 				092E0D861C587C0E001AAF79 /* StyleCustom.h */,
 			);
 			path = Customization;
+			sourceTree = "<group>";
+		};
+		092E0D8B1C592A0C001AAF79 /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D8C1C592A0C001AAF79 /* WeiboModel.h */,
+				092E0D8D1C592A0C001AAF79 /* WeiboModel.m */,
+			);
+			path = Weibo;
+			sourceTree = "<group>";
+		};
+		092E0D8F1C592A24001AAF79 /* Weibo */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D901C592A24001AAF79 /* WeiboCell.h */,
+				092E0D911C592A24001AAF79 /* WeiboCell.m */,
+				092E0D921C592A24001AAF79 /* WeiboDetailViewController.h */,
+				092E0D931C592A24001AAF79 /* WeiboDetailViewController.m */,
+				092E0D941C592A24001AAF79 /* WeiboTableViewController.h */,
+				092E0D951C592A24001AAF79 /* WeiboTableViewController.m */,
+				092E0D981C592A24001AAF79 /* Weibo.storyboard */,
+			);
+			path = Weibo;
+			sourceTree = "<group>";
+		};
+		092E0D9E1C592A36001AAF79 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				092E0D9F1C592A36001AAF79 /* WeiboViewModel.h */,
+				092E0DA01C592A36001AAF79 /* WeiboViewModel.m */,
+				092E0DA11C592A36001AAF79 /* ViewModelClass.h */,
+				092E0DA21C592A36001AAF79 /* ViewModelClass.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		092E0DA51C592A58001AAF79 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				092E0DA61C592A58001AAF79 /* NetRequestClass.h */,
+				092E0DA71C592A58001AAF79 /* NetRequestClass.m */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		1BB5019F31BE469F592E0B67 /* Frameworks */ = {
@@ -1553,6 +1624,7 @@
 		C54689FD1BD1F02300D49223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				092E0D8F1C592A24001AAF79 /* Weibo */,
 				00EDF60B19EFB42500A5C842 /* Main ViewControllers */,
 				3843641D1AC5529C00743CB0 /* Team */,
 				C5E56F491B56AFB50059924C /* Main */,
@@ -1960,6 +2032,7 @@
 				C5E92FDE1B59FAC300EFE47E /* Homepage.storyboard in Resources */,
 				092E0D7E1C5763EE001AAF79 /* MYCustomPanel.xib in Resources */,
 				092E0D751C5763A2001AAF79 /* HeaderImage.png in Resources */,
+				092E0D9D1C592A24001AAF79 /* Weibo.storyboard in Resources */,
 				00D6BCEE19EB673200E8754E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2068,6 +2141,7 @@
 				092E0D7D1C5763EE001AAF79 /* MYCustomPanel.m in Sources */,
 				38BC204D1A07643A00B8BB16 /* OSCPostDetails.m in Sources */,
 				C52BF4E71AF9AAA000E53508 /* TeamWeeklyReportDetail.m in Sources */,
+				092E0DA31C592A36001AAF79 /* WeiboViewModel.m in Sources */,
 				38A9EEA91AA95AB4006C95BD /* AboutPage.m in Sources */,
 				092E0D891C587C52001AAF79 /* ModuleCustom.m in Sources */,
 				38763A351A8DDF51008E6805 /* MessageBubbleCell.m in Sources */,
@@ -2076,6 +2150,7 @@
 				C5EF89321BE319A300B5FA46 /* BlogsViewController.m in Sources */,
 				38963EB61AD7D11D00DE9479 /* NSTextAttachment+Util.m in Sources */,
 				382A94AE1A26DBDD00AAAFEA /* EmojiPageVC.m in Sources */,
+				092E0D8E1C592A0C001AAF79 /* WeiboModel.m in Sources */,
 				C5EF891A1BE318E800B5FA46 /* CommentsViewController.m in Sources */,
 				C5A89C371B09C34B00798B1C /* FAImageView.m in Sources */,
 				EE6DB94B1AD676A3004FCF3C /* MyTweetLikeListCell.m in Sources */,
@@ -2083,6 +2158,7 @@
 				C5FB95881AEA1DA9006918CD /* TeamDiscussion.m in Sources */,
 				EED55F721A80AB13004E6371 /* UIButton+Badge.m in Sources */,
 				38EAF1C41AE0EA6D00397E2A /* TeamProject.m in Sources */,
+				092E0DA91C592A58001AAF79 /* NetRequestClass.m in Sources */,
 				00FF954E19F3E5FF002F4737 /* SwipableViewController.m in Sources */,
 				C5E56F4E1B56AFB50059924C /* RootViewController.m in Sources */,
 				38A93FA91AA31DB400A515E8 /* MessageCenter.m in Sources */,
@@ -2109,6 +2185,7 @@
 				00D6BCE319EB673200E8754E /* AppDelegate.m in Sources */,
 				38B0BFA31A41349800A2FDB0 /* OptionButton.m in Sources */,
 				C52BF4F41AFB50CC00E53508 /* TeamDetailContentCell.m in Sources */,
+				092E0D9A1C592A24001AAF79 /* WeiboDetailViewController.m in Sources */,
 				384A112F1ADF9B5F00856A7C /* TeamHomePage.m in Sources */,
 				C57E7B571B56734300F39B5C /* PlaceholderTextView.m in Sources */,
 				38A93FA01A9F8F8F00A515E8 /* OSCReply.m in Sources */,
@@ -2131,10 +2208,12 @@
 				380FD2261A761119003C4021 /* ActivityDetailsViewController.m in Sources */,
 				31EAF9FB1AEF2685004DF445 /* ProjectListViewController.m in Sources */,
 				38763A401A8DFB11008E6805 /* UIImage+Util.m in Sources */,
+				092E0DA41C592A36001AAF79 /* ViewModelClass.m in Sources */,
 				C5F3D77A1AF0C40B0032F775 /* WeeklyReportTableViewController.m in Sources */,
 				38EAF1C11AE0E6B100397E2A /* TeamIssue.m in Sources */,
 				31EAF9FF1AEF884A004DF445 /* TeamIssueList.m in Sources */,
 				C52BF4F01AF9FE8800E53508 /* TimeLineNodeCell.m in Sources */,
+				092E0D991C592A24001AAF79 /* WeiboCell.m in Sources */,
 				386039611A09C5A1007C9B88 /* OSCUser.m in Sources */,
 				38EAF1B61AE0A85F00397E2A /* TeamActivity.m in Sources */,
 				C5EF89221BE3194800B5FA46 /* SoftwareCatalogVC.m in Sources */,
@@ -2150,6 +2229,7 @@
 				387794251A0B60C700C41C78 /* Config.m in Sources */,
 				38B0BF8B1A39C68B00A2FDB0 /* FriendsViewController.m in Sources */,
 				383B9FD91AB416F000C03C47 /* ActivityDetailsWithBarViewController.m in Sources */,
+				092E0D9B1C592A24001AAF79 /* WeiboTableViewController.m in Sources */,
 				C5FB95971AEE14FC006918CD /* TeamTeam.m in Sources */,
 				380FD22D1A7621C5003C4021 /* ActivityDetailsCell.m in Sources */,
 				C5F3D7801AF0C8BF0032F775 /* WeeklyReportCell.m in Sources */,

@@ -17,6 +17,6 @@ NSString * const kButtonImages[6] = {@"tweetEditing", @"picture", @"shooting", @
 int kButtonColors[6] = {0xe69961, 0x0dac6b, 0x24a0c4, 0xe96360, 0x61b644, 0xf1c50e};
 
 /* side menu item customization */
-int kSideMenuItemNum = 5;
-NSString * const kSideMenuItemImages[5] = {@"sidemenu_QA", @"sidemenu-software", @"sidemenu_blog", @"sidemenu_setting", @"sidemenu-night"};
-NSString * const kSideMenuItemTitles[5] = {@"技术问答", @"开源软件", @"博客区", @"设置", @"夜间模式"};
+int kSideMenuItemNum = 6;
+NSString * const kSideMenuItemImages[6] = {@"sidemenu_QA", @"sidemenu-software", @"sidemenu_blog", @"sidemenu_setting", @"sidemenu-night", @"sidemenu-night"};
+NSString * const kSideMenuItemTitles[6] = {@"技术问答", @"开源软件", @"博客区", @"设置", @"夜间模式", @"微博"};

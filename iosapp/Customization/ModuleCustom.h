@@ -18,5 +18,5 @@ extern int kButtonColors[6];
 
 /* side menu item customization */
 extern int kSideMenuItemNum;
-extern NSString * const kSideMenuItemImages[5];
-extern NSString * const kSideMenuItemTitles[5];
+extern NSString * const kSideMenuItemImages[6];
+extern NSString * const kSideMenuItemTitles[6];

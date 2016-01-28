@@ -27,6 +27,7 @@
 #import <UIImageView+WebCache.h>
 
 #import "ModuleCustom.h"
+#import "WeiboTableViewController.h"
 
 @implementation SideMenuViewController
 
@@ -225,6 +226,14 @@ static BOOL isNight;
             [Config saveWhetherNightMode:!isNight];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"dawnAndNight" object:nil];
 //            isNight = !isNight;
+        }
+        case 5: {
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Weibo" bundle:[NSBundle mainBundle]];
+            WeiboTableViewController *weiboPage = [storyboard instantiateViewControllerWithIdentifier:@"WeiboTableViewController"];
+
+            [self setContentViewController:weiboPage];
+            
+            break;
         }
         default: break;
     }
