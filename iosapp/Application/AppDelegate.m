@@ -22,12 +22,15 @@
 #import <UMengSocial/UMSocialWechatHandler.h>
 #import <UMengSocial/UMSocialSinaHandler.h>
 
+#import "JsonUtils.h"
+
 @interface AppDelegate () <UIApplicationDelegate>
 
 @end
 
 @implementation AppDelegate
 
+#define USE_STAGING_FEEDS (true)
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
@@ -103,6 +106,9 @@
     [WeiboSDK registerApp:@"3616966952"];
     
     
+    //
+    [self setupLeftMenu];
+    
     return YES;
 }
 
@@ -164,6 +170,68 @@
 }
 
 
+# pragma BackgroundFetch
+
+-(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
+    NSDate *fetchStart = [NSDate date];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDirectory = [paths objectAtIndex:0];
+    NSString *menuPath = [docDirectory stringByAppendingPathComponent:@"menuData"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
+        _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
+    }
+}
+
+
+- (void) setupLeftMenu{
+    // Updating menu from server JSON
+    
+    NSString *menuUrl = [NSString stringWithFormat:@"http://www.whitehouse.gov/sites/default/files/feeds/config.json"];
+    NSURL *url = [NSURL URLWithString:menuUrl];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docDirectory = [paths objectAtIndex:0];
+    NSString *menuPath = [docDirectory stringByAppendingPathComponent:@"menuData"];
+    
+    
+    if USE_STAGING_FEEDS {
+        _menuJSON = [JsonUtils getConfig:@"menuConfig" with:@"menuItems"];
+        [_menuJSON writeToFile:menuPath atomically: YES];
+        _menuItems = [[NSMutableArray alloc] initWithArray: _menuJSON];
+        
+    }else{
+        AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+        operation.responseSerializer = [AFJSONResponseSerializer serializer];
+        operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+        [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            _menuJSON = responseObject[@"menuItems"];
+            if (![_menuJSON writeToFile:menuPath atomically:YES]) {
+                NSLog(@"Couldn't save menu config");
+            }
+            if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
+                _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
+
+            }
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
+                _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
+            }
+            NSLog(@"Error fetching menu config");
+        }];
+        [operation start];
+    }
+    
+    
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
+        _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
+    }
+}
 
 
 

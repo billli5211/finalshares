@@ -19,6 +19,8 @@
 @property (nonatomic, strong) UIWindow *window;
 @property (nonatomic, weak) id <WeiboSDKDelegate, WXApiDelegate> loginDelegate;
 @property (nonatomic, assign) BOOL inNightMode;
+@property (nonatomic, strong) NSArray *menuJSON;
+@property (nonatomic, strong) NSMutableArray *menuItems;
 
 @end
 

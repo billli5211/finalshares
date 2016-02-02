@@ -18,6 +18,8 @@
 #import <AFNetworking.h>
 #import <SDImageCache.h>
 
+#import "AppDelegate.h"
+
 @interface SettingsPage () <UIAlertViewDelegate>
 
 @end
@@ -39,9 +41,9 @@
     self.tableView.backgroundColor = [UIColor themeColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-
+    
     self.tableView.separatorColor = [UIColor separatorColor];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,9 +68,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case 0: return 1;
+        case 0: return 2;
         case 1: return 3;
-        case 2: return 1;
+        case 2: return 2;
             
         default: return 0;
     }
@@ -78,8 +80,23 @@
 {
     UITableViewCell *cell = [UITableViewCell new];
     
+    NSString *modeTitle;
+    
+    NSInteger section = indexPath.section, row = indexPath.row;
+    if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode){
+        if(section == 0 && row == 1){
+            cell.imageView.image = [UIImage imageNamed:@"sidemenu-day"];
+        }
+        modeTitle = @"日间模式";
+    } else {
+        if(section == 0 && row == 1){
+            cell.imageView.image = [UIImage imageNamed:@"sidemenu-night"];
+        }
+        modeTitle = @"夜间模式";
+    }
+    
     NSArray *titles = @[
-                        @[@"清除缓存", @"消息通知"],
+                        @[@"清除缓存", modeTitle],
                         @[@"给应用评分", @"关于", @"开源许可"],
                         @[@"注销登录"],
                         ];
@@ -89,7 +106,6 @@
     
     cell.selectedBackgroundView = [[UIView alloc] initWithFrame:cell.frame];
     cell.selectedBackgroundView.backgroundColor = [UIColor selectCellSColor];
-    
     
     return cell;
 }
@@ -104,9 +120,19 @@
         if (row == 0) {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"确定要清除缓存的图片和文件？" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
             [alertView show];
-
-        } else if (row == 1){
             
+        } else if (row == 1){
+            BOOL isNight = [Config getMode];
+            if (isNight) {
+                ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = NO;
+            } else {
+                ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = YES;
+            }
+            self.tableView.backgroundColor = [UIColor titleBarColor];
+            [Config saveWhetherNightMode:!isNight];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"dawnAndNight" object:nil];
+            
+            [self.tableView reloadData];
         }
     } else if (section == 1) {
         if (row == 0) {
@@ -117,26 +143,29 @@
             [self.navigationController pushViewController:[OSLicensePage new] animated:YES];
         }
     } else if (section == 2) {
-        [Config clearProfile];
-        [Config removeTeamInfo];
-        [Config clearCookie];
-        
-        NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-        for (NSHTTPCookie *cookie in [cookieStorage cookies]) {
-            [cookieStorage deleteCookie:cookie];
+        if(row == 0){
+            [Config clearProfile];
+            [Config removeTeamInfo];
+            [Config clearCookie];
+            
+            NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            for (NSHTTPCookie *cookie in [cookieStorage cookies]) {
+                [cookieStorage deleteCookie:cookie];
+            }
+            
+            MBProgressHUD *HUD = [Utils createHUD];
+            HUD.mode = MBProgressHUDModeCustomView;
+            HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-done"]];
+            HUD.labelText = @"注销成功";
+            [HUD hide:YES afterDelay:0.5];
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"userRefresh" object:@(YES)];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+
         }
-        
-        MBProgressHUD *HUD = [Utils createHUD];
-        HUD.mode = MBProgressHUDModeCustomView;
-        HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-done"]];
-        HUD.labelText = @"注销成功";
-        [HUD hide:YES afterDelay:0.5];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"userRefresh" object:@(YES)];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
     }
 }
 

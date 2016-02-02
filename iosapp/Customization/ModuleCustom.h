@@ -15,8 +15,3 @@ extern NSString * const kTabItemImages[5];
 extern NSString * const kButtonTitles[6];
 extern NSString * const kButtonImages[6];
 extern int kButtonColors[6];
-
-/* side menu item customization */
-extern int kSideMenuItemNum;
-extern NSString * const kSideMenuItemImages[6];
-extern NSString * const kSideMenuItemTitles[6];

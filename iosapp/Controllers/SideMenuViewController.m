@@ -28,10 +28,10 @@
 
 #import "ModuleCustom.h"
 #import "WeiboTableViewController.h"
+#import "VideoTableViewController.h"
 
 @implementation SideMenuViewController
 
-static BOOL isNight;
 
 - (void)viewDidLoad
 {
@@ -47,12 +47,14 @@ static BOOL isNight;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dawnAndNightMode:) name:@"dawnAndNight" object:nil];
     
-    ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = [Config getMode];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    _menuItems = appDelegate.menuItems;
 
 }
 
 - (void)dawnAndNightMode:(NSNotification *)center
 {
+    self.tableView.backgroundColor = [UIColor titleBarColor];
     [self.tableView reloadData];
 }
 - (void)didReceiveMemoryWarning
@@ -119,7 +121,7 @@ static BOOL isNight;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return kSideMenuItemNum;
+    return [self.menuItems count];
 }
 
 
@@ -138,21 +140,17 @@ static BOOL isNight;
     selectedBackground.backgroundColor = [UIColor colorWithHex:0xCFCFCF];
     [cell setSelectedBackgroundView:selectedBackground];
     
-    cell.imageView.image = [UIImage imageNamed:kSideMenuItemImages[indexPath.row]];
-    cell.textLabel.text = kSideMenuItemTitles[indexPath.row];
+    NSString *title = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSString *image = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"image"];
+    NSString *itemId = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"id"];
+    
+    cell.imageView.image = [UIImage imageNamed:image];
+    cell.textLabel.text = title;
     
     if (((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode){
         cell.textLabel.textColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0];
-        if (indexPath.row == 4) {
-            cell.textLabel.text = @"日间模式";
-            cell.imageView.image = [UIImage imageNamed:@"sidemenu-day"];
-        }
     } else {
         cell.textLabel.textColor = [UIColor colorWithHex:0x555555];
-        if (indexPath.row == 4) { 
-            cell.textLabel.text = @"夜间模式";
-            cell.imageView.image = [UIImage imageNamed:@"sidemenu-night"];
-        }
     }
     cell.textLabel.font = [UIFont systemFontOfSize:19];
     
@@ -166,76 +164,63 @@ static BOOL isNight;
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    switch (indexPath.row) {
-        case 0: {
-            SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:@"技术问答"
-                                                                               andSubTitles:@[@"提问", @"分享", @"综合", @"职业", @"站务"]
-                                                                             andControllers:@[
-                                                                                              [[PostsViewController alloc] initWithPostsType:PostsTypeQA],
-                                                                                              [[PostsViewController alloc] initWithPostsType:PostsTypeShare],
-                                                                                              [[PostsViewController alloc] initWithPostsType:PostsTypeSynthesis],
-                                                                                              [[PostsViewController alloc] initWithPostsType:PostsTypeCaree],
-                                                                                              [[PostsViewController alloc] initWithPostsType:PostsTypeSiteManager]
-                                                                                              ]];
-            
-            [self setContentViewController:newsSVC];
-            
-            break;
-        }
-        case 1: {
-            SwipableViewController *softwaresSVC = [[SwipableViewController alloc] initWithTitle:@"开源软件"
-                                                                                    andSubTitles:@[@"分类", @"推荐", @"最新", @"热门", @"国产"]
-                                                                                  andControllers:@[
-                                                                                                   [[SoftwareCatalogVC alloc] initWithTag:0],
-                                                                                                   [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeRecommended],
-                                                                                                   [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeNewest],
-                                                                                                   [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeHottest],
-                                                                                                   [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeCN]
-                                                                                                   ]];
-            
-            [self setContentViewController:softwaresSVC];
-            
-            break;
-        }
-        case 2: {
-            SwipableViewController *blogsSVC = [[SwipableViewController alloc] initWithTitle:@"博客区"
-                                                                                andSubTitles:@[@"最新博客", @"推荐阅读"]
+    NSString *title = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"title"];
+    NSString *itemId = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"id"];
+    NSArray *subTitle = [[_menuItems objectAtIndex:indexPath.row] objectForKey:@"subTitle"];
+    
+    if ([itemId isEqualToString:@"qa"]) {
+        SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:title
+                                                                           andSubTitles:subTitle
+                                                                         andControllers:@[
+                                                                                          [[PostsViewController alloc] initWithPostsType:PostsTypeQA],
+                                                                                          [[PostsViewController alloc] initWithPostsType:PostsTypeShare],
+                                                                                          [[PostsViewController alloc] initWithPostsType:PostsTypeSynthesis],
+                                                                                          [[PostsViewController alloc] initWithPostsType:PostsTypeCaree],
+                                                                                          [[PostsViewController alloc] initWithPostsType:PostsTypeSiteManager]
+                                                                                          ]];
+        
+        [self setContentViewController:newsSVC];
+    }
+    else if([itemId isEqualToString:@"software"]){
+        SwipableViewController *softwaresSVC = [[SwipableViewController alloc] initWithTitle:title
+                                                                                andSubTitles:subTitle
                                                                               andControllers:@[
-                                                                                               [[BlogsViewController alloc] initWithBlogsType:BlogTypeLatest],
-                                                                                               [[BlogsViewController alloc] initWithBlogsType:BlogTypeRecommended]
+                                                                                               [[SoftwareCatalogVC alloc] initWithTag:0],
+                                                                                               [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeRecommended],
+                                                                                               [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeNewest],
+                                                                                               [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeHottest],
+                                                                                               [[SoftwareListVC alloc] initWithSoftwaresType:SoftwaresTypeCN]
                                                                                                ]];
-            
-            [self setContentViewController:blogsSVC];
-            
-            break;
-        }
-        case 3: {
-            SettingsPage *settingPage = [SettingsPage new];
-            [self setContentViewController:settingPage];
-            
-            break;
-        }
-        case 4: {
-            isNight = [Config getMode];
-            if (isNight) {
-                ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = NO;
-            } else {
-                ((AppDelegate *)[UIApplication sharedApplication].delegate).inNightMode = YES;
-            }
-            self.tableView.backgroundColor = [UIColor titleBarColor];
-            [Config saveWhetherNightMode:!isNight];
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"dawnAndNight" object:nil];
-//            isNight = !isNight;
-        }
-        case 5: {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Weibo" bundle:[NSBundle mainBundle]];
-            WeiboTableViewController *weiboPage = [storyboard instantiateViewControllerWithIdentifier:@"WeiboTableViewController"];
-
-            [self setContentViewController:weiboPage];
-            
-            break;
-        }
-        default: break;
+        
+        [self setContentViewController:softwaresSVC];
+    }
+    else if([itemId isEqualToString:@"blog"]){
+        SwipableViewController *blogsSVC = [[SwipableViewController alloc] initWithTitle:title
+                                                                            andSubTitles:subTitle
+                                                                          andControllers:@[
+                                                                                           [[BlogsViewController alloc] initWithBlogsType:BlogTypeLatest],
+                                                                                           [[BlogsViewController alloc] initWithBlogsType:BlogTypeRecommended]
+                                                                                           ]];
+        
+        [self setContentViewController:blogsSVC];
+    }
+    else if([itemId isEqualToString:@"setting"]){
+        SettingsPage *settingPage = [SettingsPage new];
+        [self setContentViewController:settingPage];
+    }
+    else if([itemId isEqualToString:@"weibo"]){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Weibo" bundle:[NSBundle mainBundle]];
+        WeiboTableViewController *weiboPage = [storyboard instantiateViewControllerWithIdentifier:@"WeiboTableViewController"];
+        
+        [self setContentViewController:weiboPage];
+    }
+    else if([itemId isEqualToString:@"video"]){
+        VideoTableViewController *videoPage = [VideoTableViewController new];
+        
+        [self setContentViewController:videoPage];
+    }
+    else if([itemId isEqualToString:@"music"]){
+        
     }
 }
 

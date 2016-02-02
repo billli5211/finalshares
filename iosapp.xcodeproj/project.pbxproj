@@ -40,6 +40,14 @@
 		092E0DA31C592A36001AAF79 /* WeiboViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA01C592A36001AAF79 /* WeiboViewModel.m */; };
 		092E0DA41C592A36001AAF79 /* ViewModelClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA21C592A36001AAF79 /* ViewModelClass.m */; };
 		092E0DA91C592A58001AAF79 /* NetRequestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DA71C592A58001AAF79 /* NetRequestClass.m */; };
+		092E0DAD1C5A7AD8001AAF79 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DAC1C5A7AD8001AAF79 /* VideoModel.m */; };
+		092E0DB51C5A7AFA001AAF79 /* VideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DB01C5A7AFA001AAF79 /* VideoCell.m */; };
+		092E0DB71C5A7AFA001AAF79 /* VideoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DB41C5A7AFA001AAF79 /* VideoTableViewController.m */; };
+		092E0DBA1C5A7B2D001AAF79 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DB91C5A7B2D001AAF79 /* UIView+Extension.m */; };
+		092E0DBC1C5A854D001AAF79 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092E0DBB1C5A854D001AAF79 /* MediaPlayer.framework */; };
+		092E0DC01C5CC04F001AAF79 /* menuConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = 092E0DBE1C5CC04F001AAF79 /* menuConfig.json */; };
+		092E0DC11C5CC04F001AAF79 /* video.json in Resources */ = {isa = PBXBuildFile; fileRef = 092E0DBF1C5CC04F001AAF79 /* video.json */; };
+		092E0DC41C5D0C17001AAF79 /* JsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DC31C5D0C17001AAF79 /* JsonUtils.m */; };
 		3118F8D31AFB4803001684BC /* TeamMemberDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */; };
 		3118F8D61AFB49CD001684BC /* MemberDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3118F8D51AFB49CD001684BC /* MemberDetailCell.m */; };
 		31405BE91AF07453000A487D /* TeamIssueListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31405BE81AF07453000A487D /* TeamIssueListViewController.m */; };
@@ -310,6 +318,19 @@
 		092E0DA61C592A58001AAF79 /* NetRequestClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequestClass.h; sourceTree = "<group>"; };
 		092E0DA71C592A58001AAF79 /* NetRequestClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequestClass.m; sourceTree = "<group>"; };
 		092E0DA81C592A58001AAF79 /* WeiboConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboConfig.h; sourceTree = "<group>"; };
+		092E0DAB1C5A7AD8001AAF79 /* VideoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		092E0DAC1C5A7AD8001AAF79 /* VideoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
+		092E0DAF1C5A7AFA001AAF79 /* VideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCell.h; sourceTree = "<group>"; };
+		092E0DB01C5A7AFA001AAF79 /* VideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoCell.m; sourceTree = "<group>"; };
+		092E0DB31C5A7AFA001AAF79 /* VideoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoTableViewController.h; sourceTree = "<group>"; };
+		092E0DB41C5A7AFA001AAF79 /* VideoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoTableViewController.m; sourceTree = "<group>"; };
+		092E0DB81C5A7B2D001AAF79 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		092E0DB91C5A7B2D001AAF79 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		092E0DBB1C5A854D001AAF79 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		092E0DBE1C5CC04F001AAF79 /* menuConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = menuConfig.json; sourceTree = "<group>"; };
+		092E0DBF1C5CC04F001AAF79 /* video.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = video.json; sourceTree = "<group>"; };
+		092E0DC21C5D0C17001AAF79 /* JsonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JsonUtils.h; sourceTree = "<group>"; };
+		092E0DC31C5D0C17001AAF79 /* JsonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JsonUtils.m; sourceTree = "<group>"; };
 		3118F8D11AFB4803001684BC /* TeamMemberDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamMemberDetailViewController.h; sourceTree = "<group>"; };
 		3118F8D21AFB4803001684BC /* TeamMemberDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamMemberDetailViewController.m; sourceTree = "<group>"; };
 		3118F8D41AFB49CD001684BC /* MemberDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemberDetailCell.h; sourceTree = "<group>"; };
@@ -686,6 +707,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				092E0DBC1C5A854D001AAF79 /* MediaPlayer.framework in Frameworks */,
 				C5E4D95B1B65D7FE00116D6E /* Foundation.framework in Frameworks */,
 				C5E4D9591B65D7F200116D6E /* UIKit.framework in Frameworks */,
 				C5E4D9571B65D7E800116D6E /* CoreText.framework in Frameworks */,
@@ -730,6 +752,7 @@
 		00C9A73919EE8536000EA878 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DAA1C5A7AD8001AAF79 /* Video */,
 				092E0D8B1C592A0C001AAF79 /* Weibo */,
 				3843641B1AC5525800743CB0 /* OSC */,
 				3843641C1AC5527600743CB0 /* Team */,
@@ -837,6 +860,8 @@
 		00EDF60C19EFC13500A5C842 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DC21C5D0C17001AAF79 /* JsonUtils.h */,
+				092E0DC31C5D0C17001AAF79 /* JsonUtils.m */,
 				092E0DA51C592A58001AAF79 /* Request */,
 				092E0DA81C592A58001AAF79 /* WeiboConfig.h */,
 				00EDF60D19EFF4B300A5C842 /* Utils.h */,
@@ -926,9 +951,39 @@
 			path = Request;
 			sourceTree = "<group>";
 		};
+		092E0DAA1C5A7AD8001AAF79 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				092E0DAB1C5A7AD8001AAF79 /* VideoModel.h */,
+				092E0DAC1C5A7AD8001AAF79 /* VideoModel.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		092E0DAE1C5A7AFA001AAF79 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				092E0DAF1C5A7AFA001AAF79 /* VideoCell.h */,
+				092E0DB01C5A7AFA001AAF79 /* VideoCell.m */,
+				092E0DB31C5A7AFA001AAF79 /* VideoTableViewController.h */,
+				092E0DB41C5A7AFA001AAF79 /* VideoTableViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		092E0DBD1C5CC04F001AAF79 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				092E0DBE1C5CC04F001AAF79 /* menuConfig.json */,
+				092E0DBF1C5CC04F001AAF79 /* video.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		1BB5019F31BE469F592E0B67 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DBB1C5A854D001AAF79 /* MediaPlayer.framework */,
 				C5E4D95A1B65D7FE00116D6E /* Foundation.framework */,
 				C5E4D9581B65D7F200116D6E /* UIKit.framework */,
 				C5E4D9561B65D7E800116D6E /* CoreText.framework */,
@@ -1233,6 +1288,7 @@
 		386039661A0A34F5007C9B88 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DBD1C5CC04F001AAF79 /* json */,
 				092E0D6E1C576386001AAF79 /* images */,
 				C5B123191B316830000B29D2 /* css */,
 				C5B1231A1B316830000B29D2 /* html */,
@@ -1314,6 +1370,8 @@
 		38A1A1571A15BAB500AFD144 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DB81C5A7B2D001AAF79 /* UIView+Extension.h */,
+				092E0DB91C5A7B2D001AAF79 /* UIView+Extension.m */,
 				C5B2F1B71BD0DFF2004B4785 /* NSString+Util.h */,
 				C5B2F1B81BD0DFF2004B4785 /* NSString+Util.m */,
 				C5E5E6B51B5CCBD3009EBD8E /* ScalableCover */,
@@ -1624,6 +1682,7 @@
 		C54689FD1BD1F02300D49223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				092E0DAE1C5A7AFA001AAF79 /* Video */,
 				092E0D8F1C592A24001AAF79 /* Weibo */,
 				00EDF60B19EFB42500A5C842 /* Main ViewControllers */,
 				3843641D1AC5529C00743CB0 /* Team */,
@@ -2028,11 +2087,13 @@
 				C5E56F411B56AAAF0059924C /* News.storyboard in Resources */,
 				C5B1231C1B316830000B29D2 /* css in Resources */,
 				092E0D761C5763A2001AAF79 /* Toronto, ON.jpg in Resources */,
+				092E0DC11C5CC04F001AAF79 /* video.json in Resources */,
 				EE82D0441C43B1E30066FDC9 /* FeedBackViewController.xib in Resources */,
 				C5E92FDE1B59FAC300EFE47E /* Homepage.storyboard in Resources */,
 				092E0D7E1C5763EE001AAF79 /* MYCustomPanel.xib in Resources */,
 				092E0D751C5763A2001AAF79 /* HeaderImage.png in Resources */,
 				092E0D9D1C592A24001AAF79 /* Weibo.storyboard in Resources */,
+				092E0DC01C5CC04F001AAF79 /* menuConfig.json in Resources */,
 				00D6BCEE19EB673200E8754E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2160,6 +2221,7 @@
 				38EAF1C41AE0EA6D00397E2A /* TeamProject.m in Sources */,
 				092E0DA91C592A58001AAF79 /* NetRequestClass.m in Sources */,
 				00FF954E19F3E5FF002F4737 /* SwipableViewController.m in Sources */,
+				092E0DB51C5A7AFA001AAF79 /* VideoCell.m in Sources */,
 				C5E56F4E1B56AFB50059924C /* RootViewController.m in Sources */,
 				38A93FA91AA31DB400A515E8 /* MessageCenter.m in Sources */,
 				31697BC21B16E496001FE346 /* TeamCalendarView.m in Sources */,
@@ -2194,8 +2256,10 @@
 				C5EF892A1BE3197C00B5FA46 /* PostCell.m in Sources */,
 				EE7AC7F21AD38E5C00E850CB /* TweetsLikeListViewController.m in Sources */,
 				C5EF892B1BE3197C00B5FA46 /* PostsViewController.m in Sources */,
+				092E0DAD1C5A7AD8001AAF79 /* VideoModel.m in Sources */,
 				C5344E8F1B1DA2970024F110 /* TeamMemberListViewController.m in Sources */,
 				386825AC1A70D721008F5706 /* SearchResultsViewController.m in Sources */,
+				092E0DB71C5A7AFA001AAF79 /* VideoTableViewController.m in Sources */,
 				38B0BF9C1A3E8F9C00A2FDB0 /* OSCTabBarController.m in Sources */,
 				00FF954219F10DEE002F4737 /* UIView+Util.m in Sources */,
 				C52BF5011AFCBF1700E53508 /* TeamReplyCell.m in Sources */,
@@ -2256,6 +2320,7 @@
 				38A9EEA41AA84BE6006C95BD /* SettingsPage.m in Sources */,
 				3118F8D31AFB4803001684BC /* TeamMemberDetailViewController.m in Sources */,
 				00364FF419F543DE00871255 /* TitleBarView.m in Sources */,
+				092E0DC41C5D0C17001AAF79 /* JsonUtils.m in Sources */,
 				C5EF89241BE3194800B5FA46 /* SoftwareListVC.m in Sources */,
 				3838D1A61A6E703F00CC7913 /* OSCRandomMessage.m in Sources */,
 				31697BCC1B16FB0E001FE346 /* MZDayPickerCell.m in Sources */,
@@ -2283,6 +2348,7 @@
 				31EAF9FC1AEF2685004DF445 /* ProjectCell.m in Sources */,
 				C5B2F1B91BD0DFF2004B4785 /* NSString+Util.m in Sources */,
 				38BD7D7519FF8521003ABB80 /* OSCComment.m in Sources */,
+				092E0DBA1C5A7B2D001AAF79 /* UIView+Extension.m in Sources */,
 				386825A91A70D5E6008F5706 /* OSCSearchResult.m in Sources */,
 				38BD3D041A36A3E500682D1F /* OSCSoftwareCatalog.m in Sources */,
 				387639B11A7CF95D008E6805 /* SideMenuViewController.m in Sources */,
