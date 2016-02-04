@@ -30,6 +30,9 @@
 #import "WeiboTableViewController.h"
 #import "VideoTableViewController.h"
 
+#import "SXTableViewController.h"
+#import "InfoProvidersPage.h"
+
 @implementation SideMenuViewController
 
 
@@ -219,11 +222,38 @@
         
         [self setContentViewController:videoPage];
     }
-    else if([itemId isEqualToString:@"music"]){
+    else if([itemId isEqualToString:@"news"]){
         
+        NSMutableArray *controllers = [[NSMutableArray alloc] init];
+        for (int i=0 ; i<self.arrayLists.count ;i++){
+            SXTableViewController *vc1 = [[UIStoryboard storyboardWithName:@"News" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+            vc1.title = self.arrayLists[i][@"title"];
+            vc1.urlString = self.arrayLists[i][@"urlString"];
+            
+            [controllers addObject: vc1];
+        }
+        
+        
+        
+        SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:title
+                                                                                andSubTitles:subTitle
+                                                                              andControllers:controllers];
+        
+        [self setContentViewController:newsSVC];
+    }
+    else if([itemId isEqualToString:@"info"]){
+        InfoProvidersPage *page = [InfoProvidersPage new];
+        [self setContentViewController:page];
     }
 }
 
+- (NSArray *)arrayLists
+{
+    if (_arrayLists == nil) {
+        _arrayLists = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"NewsURLs.plist" ofType:nil]];
+    }
+    return _arrayLists;
+}
 
 - (void)setContentViewController:(UIViewController *)viewController
 {

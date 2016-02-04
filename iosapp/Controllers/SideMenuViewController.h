@@ -10,4 +10,8 @@
 
 @interface SideMenuViewController : UITableViewController
 @property (nonatomic, strong) NSArray *menuItems;
+/**
+ *  存放url的数组
+ */
+@property(nonatomic,strong) NSArray *arrayLists;
 @end

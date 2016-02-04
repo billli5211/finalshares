@@ -36,8 +36,13 @@
 #import "NetRequestClass.h"
 #import "MBProgressHUD.h"
 
-//
-
+// for integrate SXnews
+#define sxcolor [UIColor redColor]
+//#import <OneAPM/OneAPM.h>
+#import "SXHTTPManager.h"
+#import "MJExtension.h"
+#import "SXEasyMacro.h"
+#import "UIView+Frame.h"
 
 
 #endif

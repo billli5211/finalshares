@@ -35,11 +35,13 @@ PODS:
     - DTFoundation/Core
   - DTFoundation/UIKit (1.7.9):
     - DTFoundation/Core
+  - FDFullscreenPopGesture (1.1)
   - GPUImage (0.1.7)
   - GRMustache (7.3.2):
     - JRSwizzle (~> 1.0)
   - JRSwizzle (1.0)
   - MBProgressHUD (0.9.2)
+  - MJExtension (3.0.10)
   - MJRefresh (3.1.0)
   - MYBlurIntroductionView (1.0.3)
   - Ono (1.2.2)
@@ -67,9 +69,11 @@ DEPENDENCIES:
   - AFOnoResponseSerializer
   - DateTools
   - DTCoreText
+  - FDFullscreenPopGesture
   - GPUImage
   - GRMustache
   - MBProgressHUD
+  - MJExtension
   - MJRefresh
   - MYBlurIntroductionView (~> 1.0)
   - Reachability
@@ -88,10 +92,12 @@ SPEC CHECKSUMS:
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   DTCoreText: 3ea8bba23dd2141ba18adb227a7dd33a822df1c4
   DTFoundation: 70a0765e3596f82dd421832e95c65e2166eb3102
+  FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   GRMustache: ebe6104fd30a6d22c1f36af131e19e2dbf7cd292
   JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJExtension: d86aacb740c87519d20e3cca55b6fa4be6cc7548
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
   MYBlurIntroductionView: b12651c25574580472ff34989a4c5b81c157009f
   Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197

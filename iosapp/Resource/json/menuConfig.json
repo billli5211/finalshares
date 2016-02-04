@@ -31,14 +31,20 @@
              "subTitle":[]
              },
              {
-                 "id":"music",
-             "title":"音乐",
+                 "id":"news",
+             "title":"新闻",
              "image":"sidemenu-night",
-             "subTitle":[]
+             "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
              },
                  {
                  "id":"setting",
                  "title":"设置",
+                 "image":"sidemenu_setting",
+                 "subTitle":[]
+                 },
+                 {
+                 "id":"info",
+                 "title":"信息查询",
                  "image":"sidemenu_setting",
                  "subTitle":[]
                  }

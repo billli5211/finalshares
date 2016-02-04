@@ -82,13 +82,10 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7B-rU-qvg">
-                                <rect key="frame" x="20" y="202" width="560" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1y-lE-yxB">
+                                <rect key="frame" x="20" y="257" width="250" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GCd-mY-68c"/>
-                                </constraints>
-                                <state key="normal" title="登录">
+                                <state key="normal" title="注册账号">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -98,20 +95,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="login" destination="1J1-dd-VLa" eventType="touchUpInside" id="F84-Il-4Un"/>
+                                    <action selector="signUp" destination="1J1-dd-VLa" eventType="touchUpInside" id="3VD-lO-rAV"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A1y-lE-yxB">
-                                <rect key="frame" x="20" y="257" width="60" height="30"/>
-                                <state key="normal" title="注册账号">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9M-Cd-Mkp">
-                                <rect key="frame" x="520" y="257" width="60" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9M-Cd-Mkp">
+                                <rect key="frame" x="330" y="257" width="250" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="忘记密码">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="getPwd" destination="1J1-dd-VLa" eventType="touchUpInside" id="Jfc-zf-9ir"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="第三方登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNK-9V-ICi">
                                 <rect key="frame" x="258" y="312" width="85" height="20.5"/>
@@ -182,6 +183,25 @@
                                     <constraint firstItem="sc6-Xu-NbU" firstAttribute="centerY" secondItem="kcl-DN-dGw" secondAttribute="centerY" id="zZu-Fg-c1m"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7B-rU-qvg">
+                                <rect key="frame" x="20" y="202" width="560" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GCd-mY-68c"/>
+                                </constraints>
+                                <state key="normal" title="登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login" destination="1J1-dd-VLa" eventType="touchUpInside" id="F84-Il-4Un"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -210,11 +230,13 @@
                     <navigationItem key="navigationItem" title="登录" id="Tks-t7-ek3"/>
                     <connections>
                         <outlet property="accountField" destination="lY0-tD-fdf" id="ior-tX-lnj"/>
+                        <outlet property="forgetPwdButton" destination="p9M-Cd-Mkp" id="zR6-Xt-Z5X"/>
                         <outlet property="loginButton" destination="V7B-rU-qvg" id="62y-3W-tYZ"/>
                         <outlet property="passwordField" destination="GML-u0-Vrq" id="pLW-gu-bIw"/>
                         <outlet property="qqButton" destination="sc6-Xu-NbU" id="H5k-hx-fPF"/>
                         <outlet property="qqButtonRight" destination="hmr-x6-MFU" id="ioM-IC-Qyc"/>
                         <outlet property="qqButtonWidth" destination="6FU-3A-eE2" id="JRo-eo-EHL"/>
+                        <outlet property="signUpButton" destination="A1y-lE-yxB" id="4Zq-VT-RIg"/>
                         <outlet property="wechatButton" destination="kcl-DN-dGw" id="aTk-Qb-uGd"/>
                         <outlet property="wechatButtonRight" destination="R2S-G2-nHE" id="0Bq-Bv-yTM"/>
                         <outlet property="wechatButtonWidth" destination="S4g-OA-S3p" id="Gce-1N-0r2"/>

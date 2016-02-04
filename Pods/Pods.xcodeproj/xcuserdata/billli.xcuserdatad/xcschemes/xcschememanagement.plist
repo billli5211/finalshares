@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FDFullscreenPopGesture.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GPUImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -45,6 +50,11 @@
 			<false/>
 		</dict>
 		<key>MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>MJExtension.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -132,17 +142,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BAD607E3162CA814133EA2FFA1CF477</key>
+		<key>2C71DE0FB8A6E5BB6EAF9FB037D799CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>31FF44B5E2FF8CF00090950A8B67AFF6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>324BDC8A0F9A783FBA0D02FEF85654FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,22 +162,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>51A96E9E85E931E68CE6A740F00A60D0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>54D5716994BCD8C820B735B971C61D83</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5E95D464C5205DED933408B791838159</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>63C9C5BEFAE3A014808A9ADC655F86EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,7 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>691D0D18D6F9BEB33E7EF7CA7BC58097</key>
+		<key>6F729C85EF025D53004D933480F4281B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -192,17 +182,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>906F3FA5F1592DAB89382159147463EF</key>
+		<key>9E59E8825CD796E756A893D5F9FF7231</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF8109AC056F45F9A1E33D22EB9E1AFA</key>
+		<key>9EAB3E42EF957541E6C3C76D35FD008E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E12AD45C180519867FFE8D3710BD8444</key>
+		<key>A730C0F8520BB28BEFB21C6353CEF136</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C21575D027595B8385E19F995619E43B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C31B673827A2FB12D3429AE3B5A27356</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D555A14160DBE7ED9B8553D1ABB1F964</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -217,7 +222,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F720E80F202F95E85498C2D4D2CC4C94</key>
+		<key>EDA4670A9A6815B3C3F271AA1033E8AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F69B6918E56D448B92C9B9A19ACAC9B5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6DA56A0756278846A103FC632784F60</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA4CB395467E624ECFED5DA7D7BFA295</key>
 		<dict>
 			<key>primary</key>
 			<true/>

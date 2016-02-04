@@ -24,6 +24,7 @@
 #import <MBProgressHUD.h>
 #import <RESideMenu.h>
 
+#import "SignUpViewController.h"
 
 static NSString * const kShowAccountOperation = @"ShowAccountOperation";
 
@@ -34,6 +35,9 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
 @property (nonatomic, weak) IBOutlet UITextField *accountField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordField;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
+
+@property (nonatomic, weak) IBOutlet UIButton *signUpButton;
+@property (nonatomic, weak) IBOutlet UIButton *forgetPwdButton;
 
 @property (nonatomic, weak) IBOutlet UIButton *qqButton;
 @property (nonatomic, weak) IBOutlet UIButton *wechatButton;
@@ -186,6 +190,19 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
               [_hud hide:YES afterDelay:1];
           }
      ];
+}
+
+- (IBAction)signUp
+{
+    NSLog(@"enter signUp");
+    SignUpViewController *signUpViewController = [SignUpViewController new];
+    [self.navigationController pushViewController:signUpViewController animated:YES];
+}
+
+
+- (IBAction)getPwd
+{
+    NSLog(@"enter getPwd");
 }
 
 
