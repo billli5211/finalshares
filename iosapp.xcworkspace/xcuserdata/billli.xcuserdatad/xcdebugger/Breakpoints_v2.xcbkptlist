@@ -694,11 +694,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/InfoProviders/InfoProvidersPage.m"
-            timestampString = "477304213.594244"
+            timestampString = "477318952.525904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "-sendWeatherRequest"
             landmarkType = "5">
          </BreakpointContent>
@@ -710,11 +710,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/InfoProviders/InfoProvidersPage.m"
-            timestampString = "477304213.594244"
+            timestampString = "477318952.525904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "-sendWeatherRequest"
             landmarkType = "5">
          </BreakpointContent>
@@ -726,11 +726,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iosapp/InfoProviders/InfoProvidersPage.m"
-            timestampString = "477304213.594244"
+            timestampString = "477318952.525904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -748,6 +748,54 @@
             startingLineNumber = "54"
             endingLineNumber = "54"
             landmarkName = "-cityPickerController:didSelectCity:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/InfoProviders/Shop/Goods/GoodsAndBuyViewController/ViewController/BuyViewController.m"
+            timestampString = "477315064.32757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "-loadData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/SXNews/News/SXTableViewController.m"
+            timestampString = "477313454.688457"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-loadData"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosapp/InfoProviders/Shop/Goods/GoodsAndBuyViewController/ViewController/BuyViewController.m"
+            timestampString = "477315064.32757"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
+            landmarkName = "-addSecondPageTopTabBar"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

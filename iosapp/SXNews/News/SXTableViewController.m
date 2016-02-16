@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadData)];
     
 
 
@@ -53,7 +53,7 @@
 //    NSLog(@"bbbb");
     if (self.update == YES) {
         // 马上进入刷新状态
-        [self.tableView.header beginRefreshing];
+        [self.tableView.mj_header beginRefreshing];
         
         self.update = NO;
     }
@@ -98,7 +98,7 @@
             self.arrayList = arrayM;
             
             // 马上进入刷新状态
-            [self.tableView.header endRefreshing];
+            [self.tableView.mj_header endRefreshing];
 
             [self.tableView reloadData];
         }else if(type == 2){

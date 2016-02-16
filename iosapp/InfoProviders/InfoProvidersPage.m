@@ -26,6 +26,8 @@
 #import "MJExtension.h"
 #import "UIView+Frame.h"
 #import "CityInfoViewController.h"
+#import "BuyViewController.h"
+#import "ClassViewController.h"
 
 @interface InfoProvidersPage () <UIAlertViewDelegate>
 
@@ -71,7 +73,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,7 +82,7 @@
     
     
     NSArray *titles = @[
-                        @[@"天气", @"城市信息"]
+                        @[@"天气", @"城市信息",@"商品", @"购物列表",@"购物车"]
                         ];
     cell.textLabel.text = titles[indexPath.section][indexPath.row];
     cell.backgroundColor = [UIColor cellsColor];
@@ -104,6 +106,13 @@
         }else if (row == 1){
             CityInfoViewController *vc = [[CityInfoViewController alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
+        }else if (row == 2){
+            BuyViewController* buy = [[BuyViewController alloc] init];
+            [self.navigationController pushViewController:buy animated:YES];
+        }else if (row == 3){
+            ClassViewController*classList=[[ClassViewController alloc]init];
+            [self.navigationController pushViewController:classList animated:YES];
+            
         }
         
     }
