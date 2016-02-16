@@ -28,6 +28,7 @@
 #import "CityInfoViewController.h"
 #import "BuyViewController.h"
 #import "ClassViewController.h"
+#import "CarViewController.h"
 
 @interface InfoProvidersPage () <UIAlertViewDelegate>
 
@@ -113,6 +114,9 @@
             ClassViewController*classList=[[ClassViewController alloc]init];
             [self.navigationController pushViewController:classList animated:YES];
             
+        }else if (row == 4){
+            CarViewController *vc =[[CarViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         
     }
