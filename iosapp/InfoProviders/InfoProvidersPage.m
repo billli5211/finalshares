@@ -25,6 +25,7 @@
 #import "SXHTTPManager.h"
 #import "MJExtension.h"
 #import "UIView+Frame.h"
+#import "CityInfoViewController.h"
 
 @interface InfoProvidersPage () <UIAlertViewDelegate>
 
@@ -70,7 +71,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,7 +80,7 @@
     
     
     NSArray *titles = @[
-                        @[@"天气"]
+                        @[@"天气", @"城市信息"]
                         ];
     cell.textLabel.text = titles[indexPath.section][indexPath.row];
     cell.backgroundColor = [UIColor cellsColor];
@@ -98,7 +99,13 @@
     NSInteger section = indexPath.section, row = indexPath.row;
     
     if (section == 0) {
-        [self sendWeatherRequest];
+        if(row == 0){
+            [self sendWeatherRequest];
+        }else if (row == 1){
+            CityInfoViewController *vc = [[CityInfoViewController alloc]init];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
     }
 }
 

@@ -43,9 +43,6 @@
 		092E0DC41C5D0C17001AAF79 /* JsonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 092E0DC31C5D0C17001AAF79 /* JsonUtils.m */; };
 		09505ED01C7179AB00937F52 /* SXWeatherDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 09505EC31C7179AB00937F52 /* SXWeatherDetailVC.m */; };
 		09505ED11C7179AB00937F52 /* SXWeatherDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09505EC41C7179AB00937F52 /* SXWeatherDetailVC.xib */; };
-		09505ED21C7179AB00937F52 /* SXWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 09505EC71C7179AB00937F52 /* SXWeatherBgM.m */; };
-		09505ED31C7179AB00937F52 /* SXWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 09505EC91C7179AB00937F52 /* SXWeatherDetailM.m */; };
-		09505ED41C7179AB00937F52 /* SXWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09505ECB1C7179AB00937F52 /* SXWeatherModel.m */; };
 		09505ED51C7179AB00937F52 /* SXWeatherItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09505ECE1C7179AB00937F52 /* SXWeatherItemView.m */; };
 		09505ED61C7179AB00937F52 /* SXWeatherItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09505ECF1C7179AB00937F52 /* SXWeatherItemView.xib */; };
 		0950607C1C71DB9000937F52 /* base.html in Resources */ = {isa = PBXBuildFile; fileRef = 09505ED81C71DB9000937F52 /* base.html */; };
@@ -356,6 +353,15 @@
 		095061AD1C71DB9000937F52 /* weather_share@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0950607B1C71DB9000937F52 /* weather_share@2x.png */; };
 		095061B21C71DC2300937F52 /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 095061AF1C71DC2300937F52 /* Media.storyboard */; };
 		095061B31C71DC2300937F52 /* MediaViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061B11C71DC2300937F52 /* MediaViewer.m */; };
+		095061BB1C7313D400937F52 /* SXWeatherBgM.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061B61C7313D400937F52 /* SXWeatherBgM.m */; };
+		095061BC1C7313D400937F52 /* SXWeatherDetailM.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061B81C7313D400937F52 /* SXWeatherDetailM.m */; };
+		095061BD1C7313D400937F52 /* SXWeatherModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061BA1C7313D400937F52 /* SXWeatherModel.m */; };
+		095061CD1C7313E200937F52 /* CityInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061C11C7313E200937F52 /* CityInfoViewController.m */; };
+		095061CE1C7313E200937F52 /* GYZChooseCityController.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061C31C7313E200937F52 /* GYZChooseCityController.m */; };
+		095061CF1C7313E200937F52 /* GYZCity.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061C71C7313E200937F52 /* GYZCity.m */; };
+		095061D01C7313E200937F52 /* GYZCityGroupCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061CA1C7313E200937F52 /* GYZCityGroupCell.m */; };
+		095061D11C7313E200937F52 /* GYZCityHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 095061CC1C7313E200937F52 /* GYZCityHeaderView.m */; };
+		095061D31C73140400937F52 /* CityData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 095061D21C73140400937F52 /* CityData.plist */; };
 		09C80A021C6103CF00FA172F /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C80A011C6103CF00FA172F /* SignUpViewController.m */; };
 		09C80A991C62595D00FA172F /* InfoProvidersPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C80A881C62595D00FA172F /* InfoProvidersPage.m */; };
 		09C80CB91C626D5F00FA172F /* SXDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09C80C6D1C626D5F00FA172F /* SXDetailController.m */; };
@@ -668,12 +674,6 @@
 		09505EC21C7179AB00937F52 /* SXWeatherDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherDetailVC.h; sourceTree = "<group>"; };
 		09505EC31C7179AB00937F52 /* SXWeatherDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherDetailVC.m; sourceTree = "<group>"; };
 		09505EC41C7179AB00937F52 /* SXWeatherDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXWeatherDetailVC.xib; sourceTree = "<group>"; };
-		09505EC61C7179AB00937F52 /* SXWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherBgM.h; sourceTree = "<group>"; };
-		09505EC71C7179AB00937F52 /* SXWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherBgM.m; sourceTree = "<group>"; };
-		09505EC81C7179AB00937F52 /* SXWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherDetailM.h; sourceTree = "<group>"; };
-		09505EC91C7179AB00937F52 /* SXWeatherDetailM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherDetailM.m; sourceTree = "<group>"; };
-		09505ECA1C7179AB00937F52 /* SXWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherModel.h; sourceTree = "<group>"; };
-		09505ECB1C7179AB00937F52 /* SXWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherModel.m; sourceTree = "<group>"; };
 		09505ECD1C7179AB00937F52 /* SXWeatherItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherItemView.h; sourceTree = "<group>"; };
 		09505ECE1C7179AB00937F52 /* SXWeatherItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherItemView.m; sourceTree = "<group>"; };
 		09505ECF1C7179AB00937F52 /* SXWeatherItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SXWeatherItemView.xib; sourceTree = "<group>"; };
@@ -986,6 +986,24 @@
 		095061AF1C71DC2300937F52 /* Media.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Media.storyboard; sourceTree = "<group>"; };
 		095061B01C71DC2300937F52 /* MediaViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaViewer.h; sourceTree = "<group>"; };
 		095061B11C71DC2300937F52 /* MediaViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaViewer.m; sourceTree = "<group>"; };
+		095061B51C7313D400937F52 /* SXWeatherBgM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherBgM.h; sourceTree = "<group>"; };
+		095061B61C7313D400937F52 /* SXWeatherBgM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherBgM.m; sourceTree = "<group>"; };
+		095061B71C7313D400937F52 /* SXWeatherDetailM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherDetailM.h; sourceTree = "<group>"; };
+		095061B81C7313D400937F52 /* SXWeatherDetailM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherDetailM.m; sourceTree = "<group>"; };
+		095061B91C7313D400937F52 /* SXWeatherModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXWeatherModel.h; sourceTree = "<group>"; };
+		095061BA1C7313D400937F52 /* SXWeatherModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SXWeatherModel.m; sourceTree = "<group>"; };
+		095061C01C7313E200937F52 /* CityInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityInfoViewController.h; sourceTree = "<group>"; };
+		095061C11C7313E200937F52 /* CityInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityInfoViewController.m; sourceTree = "<group>"; };
+		095061C21C7313E200937F52 /* GYZChooseCityController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZChooseCityController.h; sourceTree = "<group>"; };
+		095061C31C7313E200937F52 /* GYZChooseCityController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZChooseCityController.m; sourceTree = "<group>"; };
+		095061C41C7313E200937F52 /* GYZChooseCityDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZChooseCityDelegate.h; sourceTree = "<group>"; };
+		095061C61C7313E200937F52 /* GYZCity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCity.h; sourceTree = "<group>"; };
+		095061C71C7313E200937F52 /* GYZCity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCity.m; sourceTree = "<group>"; };
+		095061C91C7313E200937F52 /* GYZCityGroupCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCityGroupCell.h; sourceTree = "<group>"; };
+		095061CA1C7313E200937F52 /* GYZCityGroupCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityGroupCell.m; sourceTree = "<group>"; };
+		095061CB1C7313E200937F52 /* GYZCityHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYZCityHeaderView.h; sourceTree = "<group>"; };
+		095061CC1C7313E200937F52 /* GYZCityHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYZCityHeaderView.m; sourceTree = "<group>"; };
+		095061D21C73140400937F52 /* CityData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CityData.plist; sourceTree = "<group>"; };
 		09C80A001C6103CF00FA172F /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		09C80A011C6103CF00FA172F /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		09C80A871C62595D00FA172F /* InfoProvidersPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoProvidersPage.h; sourceTree = "<group>"; };
@@ -1683,8 +1701,8 @@
 		09505EC01C7179AB00937F52 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				095061B41C7313D400937F52 /* Model */,
 				09505EC11C7179AB00937F52 /* Controller */,
-				09505EC51C7179AB00937F52 /* Module */,
 				09505ECC1C7179AB00937F52 /* View */,
 			);
 			path = Weather;
@@ -1698,19 +1716,6 @@
 				09505EC41C7179AB00937F52 /* SXWeatherDetailVC.xib */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		09505EC51C7179AB00937F52 /* Module */ = {
-			isa = PBXGroup;
-			children = (
-				09505EC61C7179AB00937F52 /* SXWeatherBgM.h */,
-				09505EC71C7179AB00937F52 /* SXWeatherBgM.m */,
-				09505EC81C7179AB00937F52 /* SXWeatherDetailM.h */,
-				09505EC91C7179AB00937F52 /* SXWeatherDetailM.m */,
-				09505ECA1C7179AB00937F52 /* SXWeatherModel.h */,
-				09505ECB1C7179AB00937F52 /* SXWeatherModel.m */,
-			);
-			path = Module;
 			sourceTree = "<group>";
 		};
 		09505ECC1C7179AB00937F52 /* View */ = {
@@ -1893,6 +1898,7 @@
 		09505F371C71DB9000937F52 /* plist */ = {
 			isa = PBXGroup;
 			children = (
+				095061D21C73140400937F52 /* CityData.plist */,
 				09505F381C71DB9000937F52 /* NewsURLs.plist */,
 			);
 			path = plist;
@@ -2958,6 +2964,61 @@
 			path = MediaViewer;
 			sourceTree = "<group>";
 		};
+		095061B41C7313D400937F52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				095061B51C7313D400937F52 /* SXWeatherBgM.h */,
+				095061B61C7313D400937F52 /* SXWeatherBgM.m */,
+				095061B71C7313D400937F52 /* SXWeatherDetailM.h */,
+				095061B81C7313D400937F52 /* SXWeatherDetailM.m */,
+				095061B91C7313D400937F52 /* SXWeatherModel.h */,
+				095061BA1C7313D400937F52 /* SXWeatherModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		095061BE1C7313E200937F52 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				095061BF1C7313E200937F52 /* Controller */,
+				095061C51C7313E200937F52 /* Model */,
+				095061C81C7313E200937F52 /* View */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		095061BF1C7313E200937F52 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				095061C01C7313E200937F52 /* CityInfoViewController.h */,
+				095061C11C7313E200937F52 /* CityInfoViewController.m */,
+				095061C21C7313E200937F52 /* GYZChooseCityController.h */,
+				095061C31C7313E200937F52 /* GYZChooseCityController.m */,
+				095061C41C7313E200937F52 /* GYZChooseCityDelegate.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		095061C51C7313E200937F52 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				095061C61C7313E200937F52 /* GYZCity.h */,
+				095061C71C7313E200937F52 /* GYZCity.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		095061C81C7313E200937F52 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				095061C91C7313E200937F52 /* GYZCityGroupCell.h */,
+				095061CA1C7313E200937F52 /* GYZCityGroupCell.m */,
+				095061CB1C7313E200937F52 /* GYZCityHeaderView.h */,
+				095061CC1C7313E200937F52 /* GYZCityHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		09C809FF1C6103CF00FA172F /* SignUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2970,6 +3031,7 @@
 		09C80A861C62595D00FA172F /* InfoProviders */ = {
 			isa = PBXGroup;
 			children = (
+				095061BE1C7313E200937F52 /* City */,
 				09505EC01C7179AB00937F52 /* Weather */,
 				09C80A871C62595D00FA172F /* InfoProvidersPage.h */,
 				09C80A881C62595D00FA172F /* InfoProvidersPage.m */,
@@ -4439,6 +4501,7 @@
 				EE82D0441C43B1E30066FDC9 /* FeedBackViewController.xib in Resources */,
 				095060D41C71DB9000937F52 /* Contents.json in Resources */,
 				095060861C71DB9000937F52 /* shCoreRDark.css in Resources */,
+				095061D31C73140400937F52 /* CityData.plist in Resources */,
 				095060941C71DB9000937F52 /* OSLicense.html in Resources */,
 				095060DE1C71DB9000937F52 /* Contents.json in Resources */,
 				0950615A1C71DB9000937F52 /* Contents.json in Resources */,
@@ -4585,16 +4648,19 @@
 				C5A89C391B09C34B00798B1C /* UIFont+FontAwesome.m in Sources */,
 				38BD3D071A36A97400682D1F /* OSCSoftware.m in Sources */,
 				386825A51A70A3B3008F5706 /* SearchViewController.m in Sources */,
-				09505ED41C7179AB00937F52 /* SXWeatherModel.m in Sources */,
 				C5EF89311BE319A300B5FA46 /* BlogCell.m in Sources */,
 				3874EC281A08E957000D2894 /* LoginViewController.m in Sources */,
 				381EAB5919FE1FCF00C1937C /* OSCNews.m in Sources */,
 				C5EF89381BE319F600B5FA46 /* NewsCell.m in Sources */,
 				00C9A73D19EE863B000EA878 /* OSCBaseObject.m in Sources */,
 				092E0D8A1C587C52001AAF79 /* StyleCustom.m in Sources */,
+				095061BD1C7313D400937F52 /* SXWeatherModel.m in Sources */,
 				C5D7C1111B14508E003EFE9B /* TableViewCell.m in Sources */,
+				095061D01C7313E200937F52 /* GYZCityGroupCell.m in Sources */,
+				095061BB1C7313D400937F52 /* SXWeatherBgM.m in Sources */,
 				3838D15C1A6C9D0900CC7913 /* OperationBar.m in Sources */,
 				382A95BB1A29D2C300AAAFEA /* EventsViewController.m in Sources */,
+				095061CE1C7313E200937F52 /* GYZChooseCityController.m in Sources */,
 				31697BCB1B16FB0E001FE346 /* MZDayPicker.m in Sources */,
 				38763A071A85E591008E6805 /* UserHeaderCell.m in Sources */,
 				380FD22A1A7612E8003C4021 /* ActivityBasicInfoCell.m in Sources */,
@@ -4641,7 +4707,6 @@
 				380FD2201A74DFEE003C4021 /* ActivityCell.m in Sources */,
 				C5FB95881AEA1DA9006918CD /* TeamDiscussion.m in Sources */,
 				EED55F721A80AB13004E6371 /* UIButton+Badge.m in Sources */,
-				09505ED31C7179AB00937F52 /* SXWeatherDetailM.m in Sources */,
 				38EAF1C41AE0EA6D00397E2A /* TeamProject.m in Sources */,
 				092E0DA91C592A58001AAF79 /* NetRequestClass.m in Sources */,
 				00FF954E19F3E5FF002F4737 /* SwipableViewController.m in Sources */,
@@ -4678,6 +4743,7 @@
 				384A112F1ADF9B5F00856A7C /* TeamHomePage.m in Sources */,
 				C57E7B571B56734300F39B5C /* PlaceholderTextView.m in Sources */,
 				38A93FA01A9F8F8F00A515E8 /* OSCReply.m in Sources */,
+				095061BC1C7313D400937F52 /* SXWeatherDetailM.m in Sources */,
 				EE7B45E11A830B17002508C6 /* MyBasicInfoViewController.m in Sources */,
 				384364251AC566BD00743CB0 /* MemberCell.m in Sources */,
 				C5EF892A1BE3197C00B5FA46 /* PostCell.m in Sources */,
@@ -4691,6 +4757,7 @@
 				386825AC1A70D721008F5706 /* SearchResultsViewController.m in Sources */,
 				09C80CD21C626D5F00FA172F /* SXNewsCollectionController.m in Sources */,
 				092E0DB71C5A7AFA001AAF79 /* VideoTableViewController.m in Sources */,
+				095061CF1C7313E200937F52 /* GYZCity.m in Sources */,
 				09C80CE81C626E6000FA172F /* SXSearchListCell.m in Sources */,
 				38B0BF9C1A3E8F9C00A2FDB0 /* OSCTabBarController.m in Sources */,
 				00FF954219F10DEE002F4737 /* UIView+Util.m in Sources */,
@@ -4702,6 +4769,7 @@
 				EE6DB9481AD6633E004FCF3C /* MyTweetLikeListViewController.m in Sources */,
 				38B0BF851A3993CD00A2FDB0 /* FavoritesViewController.m in Sources */,
 				09C80CBE1C626D5F00FA172F /* SXReplyCell.m in Sources */,
+				095061CD1C7313E200937F52 /* CityInfoViewController.m in Sources */,
 				C5D7C10E1B12F8A8003EFE9B /* CheckboxTableCell.m in Sources */,
 				380FD2261A761119003C4021 /* ActivityDetailsViewController.m in Sources */,
 				31EAF9FB1AEF2685004DF445 /* ProjectListViewController.m in Sources */,
@@ -4735,6 +4803,7 @@
 				092E0D9B1C592A24001AAF79 /* WeiboTableViewController.m in Sources */,
 				C5FB95971AEE14FC006918CD /* TeamTeam.m in Sources */,
 				380FD22D1A7621C5003C4021 /* ActivityDetailsCell.m in Sources */,
+				095061D11C7313E200937F52 /* GYZCityHeaderView.m in Sources */,
 				C5F3D7801AF0C8BF0032F775 /* WeeklyReportCell.m in Sources */,
 				384A11361ADFCBD200856A7C /* TeamUser.m in Sources */,
 				C5FB958B1AEA24F5006918CD /* TeamDiscussionCell.m in Sources */,
@@ -4785,7 +4854,6 @@
 				384A11331ADFA6BB00856A7C /* TeamUserMainCell.m in Sources */,
 				386BEA421A6643DE00C078A8 /* TweetDetailsWithBottomBarViewController.m in Sources */,
 				C5B2F1A81BCE6C84004B4785 /* UINavigationController+Router.m in Sources */,
-				09505ED21C7179AB00937F52 /* SXWeatherBgM.m in Sources */,
 				31405BEC1AF074A4000A487D /* TeamIssueListCell.m in Sources */,
 				3874EC1C1A08DB8E000D2894 /* EditingBar.m in Sources */,
 				09C80CD11C626D5F00FA172F /* SXCollectionCell.m in Sources */,
