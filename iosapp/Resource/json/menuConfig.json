@@ -25,6 +25,12 @@
              "subTitle":[]
              },
              {
+                 "id":"photo",
+                 "title":"图片",
+                 "image":"sidemenu-night",
+                 "subTitle":[]
+                 },
+             {
                  "id":"video",
              "title":"视频",
              "image":"sidemenu-night",

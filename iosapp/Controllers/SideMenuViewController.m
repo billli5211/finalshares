@@ -32,6 +32,7 @@
 
 #import "SXTableViewController.h"
 #import "InfoProvidersPage.h"
+#import "MediaViewer.h"
 
 @implementation SideMenuViewController
 
@@ -216,6 +217,11 @@
         WeiboTableViewController *weiboPage = [storyboard instantiateViewControllerWithIdentifier:@"WeiboTableViewController"];
         
         [self setContentViewController:weiboPage];
+    }
+    else if([itemId isEqualToString:@"photo"]){
+        MediaViewer *photoPage = [MediaViewer new];
+        
+        [self setContentViewController:photoPage];
     }
     else if([itemId isEqualToString:@"video"]){
         VideoTableViewController *videoPage = [VideoTableViewController new];
