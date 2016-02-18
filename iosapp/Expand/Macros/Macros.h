@@ -1,0 +1,79 @@
+//
+//  Macros.h
+//  常见的配置项
+//
+
+
+// MainScreen Height&Width
+#define Main_Screen_Height      [[UIScreen mainScreen] bounds].size.height
+#define Main_Screen_Width       [[UIScreen mainScreen] bounds].size.width
+
+// MainScreen bounds
+#define Main_Screen_Bounds [[UIScreen mainScreen] bounds]
+
+
+// 字体大小(常规/粗体)
+#define BOLDSYSTEMFONT(FONTSIZE)[UIFont boldSystemFontOfSize:FONTSIZE]
+#define SYSTEMFONT(FONTSIZE)    [UIFont systemFontOfSize:FONTSIZE]
+#define FONT(NAME, FONTSIZE)    [UIFont fontWithName:(NAME) size:(FONTSIZE)]
+
+// 当前版本
+#define FSystemVersion          ([[[UIDevice currentDevice] systemVersion] floatValue])
+#define DSystemVersion          ([[[UIDevice currentDevice] systemVersion] doubleValue])
+#define SSystemVersion          ([[UIDevice currentDevice] systemVersion])
+
+// 是否IOS7
+#define isIOS7                  ([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)
+// 是否IOS6
+#define isIOS6                  ([[[UIDevice currentDevice]systemVersion]floatValue] < 7.0)
+//
+#define isIOS8                  ([[[UIDevice currentDevice]systemVersion]floatValue] >=8.0)
+// 是否iPad
+#define isPad                   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+// 是否空对象
+#define IS_NULL_CLASS(OBJECT) [OBJECT isKindOfClass:[NSNull class]]
+
+//色值
+#define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0f green:g/255.0f blue:b/255.0f alpha:a]
+#define RGB(r,g,b) RGBA(r,g,b,1.0f)
+
+#define HEXCOLOR(hex) [UIColor colorWithRed:((float)((hex & 0xFF0000) >> 16)) / 255.0 green:((float)((hex & 0xFF00) >> 8)) / 255.0 blue:((float)(hex & 0xFF)) / 255.0 alpha:1]
+
+#define COLOR_RGB(rgbValue,a) [UIColor colorWithRed:((float)(((rgbValue) & 0xFF0000) >> 16))/255.0 green:((float)(((rgbValue) & 0xFF00)>>8))/255.0 blue: ((float)((rgbValue) & 0xFF))/255.0 alpha:(a)]
+
+
+//App版本号
+#define appMPVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+//AppDelegate对象
+#define AppDelegateInstance [[UIApplication sharedApplication] delegate]
+
+//获取图片资源
+#define GetImage(imageName) [UIImage imageNamed:[NSString stringWithFormat:@"%@",imageName]]
+
+//在Main线程上运行
+#define DISPATCH_ON_MAIN_THREAD(mainQueueBlock) dispatch_async(dispatch_get_main_queue(), mainQueueBlock);
+
+//主线程上Demo
+//DISPATCH_ON_MAIN_THREAD(^{
+    //更新UI
+//})
+
+//在Global Queue上运行
+#define DISPATCH_ON_GLOBAL_QUEUE_HIGH(globalQueueBlocl) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), globalQueueBlocl);
+#define DISPATCH_ON_GLOBAL_QUEUE_DEFAULT(globalQueueBlocl) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), globalQueueBlocl);
+#define DISPATCH_ON_GLOBAL_QUEUE_LOW(globalQueueBlocl) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), globalQueueBlocl);
+#define DISPATCH_ON_GLOBAL_QUEUE_BACKGROUND(globalQueueBlocl) dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), globalQueueBlocl);
+
+//Global Queue
+//DISPATCH_ON_GLOBAL_QUEUE_DEFAULT(^{
+    //异步耗时任务
+//})
+
+//DDLog等级
+#ifdef DEBUG
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+#else
+static const int ddLogLevel = LOG_LEVEL_ERROR;
+#endif
