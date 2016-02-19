@@ -83,21 +83,12 @@
     [[UINavigationBar appearance] setBarTintColor:[UIColor navigationbarColor]];
     [[UITabBar appearance] setBarTintColor:[UIColor titleBarColor]];
     
+    // suppose the No 3/4/5 tab items are : publish, discovery, me. The first 2 items are flexible
     [self.viewControllers enumerateObjectsUsingBlock:^(UINavigationController *nav, NSUInteger idx, BOOL *stop) {
-        if (idx == 0) {
-            SwipableViewController *newsVc = nav.viewControllers[0];
-            [newsVc.titleBar setTitleButtonsColor];
-            [newsVc.viewPager.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                UITableViewController *table = obj;
-                [table.navigationController.navigationBar setBarTintColor:[UIColor navigationbarColor]];
-                [table.tabBarController.tabBar setBarTintColor:[UIColor titleBarColor]];
-                [table.tableView reloadData];
-            }];
-
-        } else if (idx == 1) {
-            SwipableViewController *tweetVc = nav.viewControllers[0];
-            [tweetVc.titleBar setTitleButtonsColor];
-            [tweetVc.viewPager.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (idx == 0 || idx == 1) {
+            SwipableViewController *vc = nav.viewControllers[0];
+            [vc.titleBar setTitleButtonsColor];
+            [vc.viewPager.controllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 UITableViewController *table = obj;
                 [table.navigationController.navigationBar setBarTintColor:[UIColor navigationbarColor]];
                 [table.tabBarController.tabBar setBarTintColor:[UIColor titleBarColor]];
@@ -129,11 +120,21 @@
 {
     [super viewDidLoad];
     
+
+    [self setupTabItems];
+    
+    [self setupActionTab];
+}
+
+-(void)setupTabItems
+{
     // customize tab bar according to remote server or local config.
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSMutableArray *tabItems = appDelegate.tabItems;
     
     NSMutableArray *enableFlag = [NSMutableArray arrayWithCapacity:tabItems.count];
+    
+    // to be user friendly, should be no more than 5 tab items.
     
     NSMutableArray *title = [NSMutableArray arrayWithCapacity:5];
     NSString *itemId[5];
@@ -159,6 +160,8 @@
     UINavigationController *homepageNav = NULL;
     SwipableViewController *sxNewsSVC = NULL;
     
+    NSMutableArray *vcArray = [[NSMutableArray alloc] init];
+    
     for (int index = 0; index < 5;index++) {
         
         if ([itemId[index] isEqualToString:@"news"]) {
@@ -174,8 +177,10 @@
             
             
             sxNewsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
-                                                                               andSubTitles:subTitle[index]
-                                                                             andControllers:sxControllers];
+                                                         andSubTitles:subTitle[index]
+                                                       andControllers:sxControllers];
+            
+            [vcArray addObject:[self addNavigationItemForViewController:sxNewsSVC withSearch:false]];
             
         }
         
@@ -193,9 +198,11 @@
             
             
             newsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
-                                                                               andSubTitles:subTitle[index]
-                                                                             andControllers:@[newsViewCtl, hotNewsViewCtl, blogViewCtl,recommendBlogViewCtl]
-                                                                                underTabbar:YES];
+                                                       andSubTitles:subTitle[index]
+                                                     andControllers:@[newsViewCtl, hotNewsViewCtl, blogViewCtl,recommendBlogViewCtl]
+                                                        underTabbar:YES];
+            
+            [vcArray addObject:[self addNavigationItemForViewController:newsSVC withSearch:true]];
         }
         else if([itemId[index] isEqualToString:@"tweet"]) {
             
@@ -209,42 +216,48 @@
             
             
             tweetsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
-                                                                                 andSubTitles:subTitle[index]
-                                                                               andControllers:@[newTweetViewCtl, hotTweetViewCtl, myTweetViewCtl]
-                                                                                  underTabbar:YES];
+                                                         andSubTitles:subTitle[index]
+                                                       andControllers:@[newTweetViewCtl, hotTweetViewCtl, myTweetViewCtl]
+                                                          underTabbar:YES];
+            
+            [vcArray addObject:[self addNavigationItemForViewController:tweetsSVC withSearch:true]];
             
         }
         else if([itemId[index] isEqualToString:@"action"]) {
+            [vcArray addObject:[UIViewController new]];
         }
         else if([itemId[index] isEqualToString:@"discover"]) {
             UIStoryboard *discoverSB = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
             discoverNav = [discoverSB instantiateViewControllerWithIdentifier:@"Nav"];
-            
+            [vcArray addObject:discoverNav];
         }
         else if([itemId[index] isEqualToString:@"me"]) {
             UIStoryboard *homepageSB = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
             homepageNav = [homepageSB instantiateViewControllerWithIdentifier:@"Nav"];
+            [vcArray addObject:homepageNav];
         }
         
     }
-
+    
     
     self.tabBar.translucent = NO;
-    self.viewControllers = @[
-                             //[self addNavigationItemForViewController:sxNewsSVC],
-                             [self addNavigationItemForViewController:newsSVC],
-                             [self addNavigationItemForViewController:tweetsSVC],
-                             [UIViewController new],
-                             discoverNav,
-                             homepageNav,
-                             ];
-
+    self.viewControllers = vcArray;
+    
     
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
         [item setTitle:[title objectAtIndex:idx]];
-        [item setImage:[UIImage imageNamed:image[idx]]];
-        [item setSelectedImage:[UIImage imageNamed:[image[idx] stringByAppendingString:@"-selected"]]];
+        
+        if(idx != 2)
+        {
+            [item setImage:[UIImage imageNamed:image[idx]]];
+            [item setSelectedImage:[UIImage imageNamed:[image[idx] stringByAppendingString:@"-selected"]]];
+        }
+        
     }];
+}
+
+-(void)setupActionTab
+{
     
     [self.tabBar.items[2] setEnabled:NO];
     
@@ -262,11 +275,19 @@
     _length = 60;        // 圆形按钮的直径
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
+    //
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableArray *actionItems = appDelegate.actionItems;
     
     for (int i = 0; i < 6; i++) {
-        OptionButton *optionButton = [[OptionButton alloc] initWithTitle:kButtonTitles[i]
-                                                                   image:[UIImage imageNamed:kButtonImages[i]]
-                                                                andColor:[UIColor colorWithHex:kButtonColors[i]]];
+
+        NSString *temp = [[actionItems objectAtIndex:i] objectForKey:@"color"];
+        
+        unsigned long color = strtoul([temp UTF8String],0,16);
+        
+        OptionButton *optionButton = [[OptionButton alloc] initWithTitle:[[actionItems objectAtIndex:i] objectForKey:@"title"]
+                                                                   image:[UIImage imageNamed:[[actionItems objectAtIndex:i] objectForKey:@"image"]]
+                                                                andColor:[UIColor colorWithHex:color]];
         
         optionButton.frame = CGRectMake((_screenWidth/6 * (i%3*2+1) - (_length+16)/2),
                                         _screenHeight + 150 + i/3*100,
@@ -281,6 +302,7 @@
         [self.view addSubview:optionButton];
         [_optionButtons addObject:optionButton];
     }
+
 }
 
 - (void)dealloc
@@ -506,17 +528,19 @@
 
 #pragma mark -
 
-- (UINavigationController *)addNavigationItemForViewController:(UIViewController *)viewController
+- (UINavigationController *)addNavigationItemForViewController:(UIViewController *)viewController withSearch: (BOOL)enableSeach
 {
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     
     viewController.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar-sidebar"]
                                                                                         style:UIBarButtonItemStylePlain
                                                                                        target:self action:@selector(onClickMenuButton)];
-    
-    viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
-                                                                                                     target:self
-                                                                                                     action:@selector(pushSearchViewController)];
+    if(enableSeach)
+    {
+        viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+                                                                                                         target:self
+                                                                                                         action:@selector(pushSearchViewController)];
+    }
     
     
     

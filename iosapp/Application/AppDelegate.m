@@ -173,38 +173,45 @@
 
 # pragma BackgroundFetch
 
+
 - (void) setupCustomConfig{
-    // Updating menu/tab from server JSON
-    
-    NSString *menuUrl = [NSString stringWithFormat:FSAPI_CUSTOMIZE_CONFIG];
-    NSURL *url = [NSURL URLWithString:menuUrl];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDirectory = [paths objectAtIndex:0];
     NSString *menuPath = [docDirectory stringByAppendingPathComponent:@"menuData"];
     NSString *tabPath = [docDirectory stringByAppendingPathComponent:@"tabData"];
+    NSString *actionPath = [docDirectory stringByAppendingPathComponent:@"actionData"];
     
-    __block NSArray *_menuJSON = NULL;
-    __block NSArray *_tabJSON = NULL;
+    __block NSArray * menuJSON = NULL;
+    __block NSArray * tabJSON = NULL;
+    __block NSArray * actionJSON = NULL;
     
     if USE_STAGING_FEEDS {
-        _menuJSON = [JsonUtils getConfig:@"customizeConfig" with:@"menuItems"];
-        [_menuJSON writeToFile:menuPath atomically: YES];
-        _menuItems = [[NSMutableArray alloc] initWithArray: _menuJSON];
+        menuJSON = [JsonUtils getConfig:@"customizeConfig" with:@"menuItems"];
+        [menuJSON writeToFile:menuPath atomically: YES];
+        _menuItems = [[NSMutableArray alloc] initWithArray: menuJSON];
         
-        _tabJSON = [JsonUtils getConfig:@"customizeConfig" with:@"tabItems"];
-        [_tabJSON writeToFile:tabPath atomically: YES];
-        _tabItems = [[NSMutableArray alloc] initWithArray: _tabJSON];
+        tabJSON = [JsonUtils getConfig:@"customizeConfig" with:@"tabItems"];
+        [tabJSON writeToFile:tabPath atomically: YES];
+        _tabItems = [[NSMutableArray alloc] initWithArray: tabJSON];
+        
+        actionJSON = [JsonUtils getConfig:@"customizeConfig" with:@"actionItems"];
+        [actionJSON writeToFile:actionPath atomically: YES];
+        _actionItems = [[NSMutableArray alloc] initWithArray: actionJSON];
         
     }else{
+        
+        NSString *custUrl = [NSString stringWithFormat:FSAPI_CUSTOMIZE_CONFIG];
+        NSURL *url = [NSURL URLWithString:custUrl];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
         operation.responseSerializer = [AFJSONResponseSerializer serializer];
         operation.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
         [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             
-            _menuJSON = responseObject[@"menuItems"];
-            if (![_menuJSON writeToFile:menuPath atomically:YES]) {
+            menuJSON = responseObject[@"menuItems"];
+            if (![menuJSON writeToFile:menuPath atomically:YES]) {
                 NSLog(@"Couldn't save menu config");
             }
             if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
@@ -212,12 +219,21 @@
 
             }
             
-            _tabJSON = responseObject[@"tabItems"];
-            if (![_tabJSON writeToFile:tabPath atomically:YES]) {
+            tabJSON = responseObject[@"tabItems"];
+            if (![tabJSON writeToFile:tabPath atomically:YES]) {
                 NSLog(@"Couldn't save tab config");
             }
             if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
                 _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
+                
+            }
+            
+            actionJSON = responseObject[@"actionItems"];
+            if (![actionJSON writeToFile:actionPath atomically:YES]) {
+                NSLog(@"Couldn't save action config");
+            }
+            if ([[NSFileManager defaultManager] fileExistsAtPath:actionPath]) {
+                _actionItems = [[NSMutableArray alloc] initWithContentsOfFile:actionPath];
                 
             }
             
@@ -229,6 +245,11 @@
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
                 _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
+            }
+            
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:actionPath]) {
+                _actionItems = [[NSMutableArray alloc] initWithContentsOfFile:actionPath];
             }
             
             NSLog(@"Error fetching customized config");
@@ -244,6 +265,10 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
         _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:actionPath]) {
+        _actionItems = [[NSMutableArray alloc] initWithContentsOfFile:actionPath];
     }
 }
 

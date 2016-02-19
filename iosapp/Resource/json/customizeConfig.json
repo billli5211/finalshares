@@ -69,14 +69,14 @@
     "tabItems":[
                 {
                 "id":"news",
-                "enable":"false",
+                "enable":"true",
                 "title":"新闻",
                 "image":"sidemenu-night",
                 "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
                 },
                  {
                  "id":"synthesization",
-                 "enable":"true",
+                 "enable":"false",
                  "title":"科技",
                  "image":"tabbar-news",
                  "subTitle":["资讯", "热点", "博客", "推荐"]
@@ -109,6 +109,53 @@
                  "image":"tabbar-me",
                  "subTitle":[]
                  }
-                 ]
+                 ],
+    
+    
+    "actionItems":[
+                {
+                "id":"tweetEditing",
+                "enable":"true",
+                "title":"文字",
+                "image":"tweetEditing",
+                "color":"0xe69961"
+                },
+                {
+                "id":"picture",
+                "enable":"false",
+                "title":"相册",
+                "image":"picture",
+                "color":"0x0dac6b"
+                },
+                {
+                "id":"shooting",
+                "enable":"true",
+                "title":"拍照",
+                "image":"shooting",
+                "color":"0x24a0c4"
+                },
+                {
+                "id":"sound",
+                "enable":"true",
+                "title":"语音",
+                "image":"sound",
+                "color":"0xe96360"
+                },
+                {
+                "id":"scan",
+                "enable":"true",
+                "title":"扫一扫",
+                "image":"scan",
+                "color":"0x61b644"
+                },
+                {
+                "id":"search",
+                "enable":"true",
+                "title":"找人",
+                "image":"search",
+                "color":"0xf1c50e"
+                }
+                ]
+
 
 }
