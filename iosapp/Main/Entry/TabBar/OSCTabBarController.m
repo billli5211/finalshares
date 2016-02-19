@@ -30,7 +30,8 @@
 
 #import <RESideMenu/RESideMenu.h>
 
-#import "ModuleCustom.h"
+#import "AppDelegate.h"
+#import "SXTableViewController.h"
 
 @interface OSCTabBarController () <UITabBarControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
@@ -42,6 +43,9 @@
     TweetsViewController *newTweetViewCtl;
     TweetsViewController *hotTweetViewCtl;
     TweetsViewController *myTweetViewCtl;
+    
+    NSMutableArray *sxControllers;
+    
 }
 
 @property (nonatomic, strong) UIView *dimView;
@@ -125,60 +129,123 @@
 {
     [super viewDidLoad];
     
-    newsViewCtl = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews];
-    hotNewsViewCtl = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeAllTypeWeekHottest];
-    blogViewCtl = [[BlogsViewController alloc] initWithBlogsType:BlogTypeLatest];
-    recommendBlogViewCtl = [[BlogsViewController alloc] initWithBlogsType:BlogTypeRecommended];
+    // customize tab bar according to remote server or local config.
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSMutableArray *tabItems = appDelegate.tabItems;
     
-    newTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeAllTweets];
-    hotTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeHotestTweets];
-    myTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeOwnTweets];
+    NSMutableArray *enableFlag = [NSMutableArray arrayWithCapacity:tabItems.count];
     
-    newsViewCtl.needCache = YES;
-    hotNewsViewCtl.needCache = YES;
-    blogViewCtl.needCache = YES;
-    recommendBlogViewCtl.needCache = YES;
+    NSMutableArray *title = [NSMutableArray arrayWithCapacity:5];
+    NSString *itemId[5];
+    NSMutableArray *image = [NSMutableArray arrayWithCapacity:5];
+    NSArray *subTitle[5];
     
-    newTweetViewCtl.needCache = YES;
-    hotTweetViewCtl.needCache = YES;
-    myTweetViewCtl.needCache = YES;
+    for (int index = 0, j = 0; index < tabItems.count && j < 5;index++) {
+        enableFlag[index] = [[tabItems objectAtIndex:index] objectForKey:@"enable"];
+        if (![enableFlag[index] isEqualToString:@"true"]) {
+            continue;
+        }
+        
+        [title addObject:[[tabItems objectAtIndex:index] objectForKey:@"title"]];
+        itemId[j] = [[tabItems objectAtIndex:index] objectForKey:@"id"];
+        image[j] = [[tabItems objectAtIndex:index] objectForKey:@"image"];
+        subTitle[j] = [[tabItems objectAtIndex:index] objectForKey:@"subTitle"];
+        j++;
+    }
     
-    SwipableViewController *newsSVC = [[SwipableViewController alloc] initWithTitle:@"综合"
-                                                                       andSubTitles:@[@"资讯", @"热点", @"博客", @"推荐"]
-                                                                     andControllers:@[newsViewCtl, hotNewsViewCtl, blogViewCtl,recommendBlogViewCtl]
-                                                                        underTabbar:YES];
+    SwipableViewController *newsSVC = NULL;
+    SwipableViewController *tweetsSVC = NULL;
+    UINavigationController *discoverNav = NULL;
+    UINavigationController *homepageNav = NULL;
+    SwipableViewController *sxNewsSVC = NULL;
     
-    SwipableViewController *tweetsSVC = [[SwipableViewController alloc] initWithTitle:@"动弹"
-                                                                         andSubTitles:@[@"最新动弹", @"热门动弹", @"我的动弹"]
-                                                                       andControllers:@[newTweetViewCtl, hotTweetViewCtl, myTweetViewCtl]
-                                                                          underTabbar:YES];
-    
-    UIStoryboard *discoverSB = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
-    UINavigationController *discoverNav = [discoverSB instantiateViewControllerWithIdentifier:@"Nav"];
-    
-    
-    UIStoryboard *homepageSB = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
-    UINavigationController *homepageNav = [homepageSB instantiateViewControllerWithIdentifier:@"Nav"];
-    
+    for (int index = 0; index < 5;index++) {
+        
+        if ([itemId[index] isEqualToString:@"news"]) {
+            NSArray * arrayLists = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"NewsURLs.plist" ofType:nil]];
+            sxControllers = [[NSMutableArray alloc] init];
+            for (int i=0 ; i< arrayLists.count ;i++){
+                SXTableViewController *vc1 = [[UIStoryboard storyboardWithName:@"News" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+                vc1.title = arrayLists[i][@"title"];
+                vc1.urlString = arrayLists[i][@"urlString"];
+                
+                [sxControllers addObject: vc1];
+            }
+            
+            
+            sxNewsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
+                                                                               andSubTitles:subTitle[index]
+                                                                             andControllers:sxControllers];
+            
+        }
+        
+        else if ([itemId[index] isEqualToString:@"synthesization"]) {
+            
+            newsViewCtl = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeNews];
+            hotNewsViewCtl = [[NewsViewController alloc]  initWithNewsListType:NewsListTypeAllTypeWeekHottest];
+            blogViewCtl = [[BlogsViewController alloc] initWithBlogsType:BlogTypeLatest];
+            recommendBlogViewCtl = [[BlogsViewController alloc] initWithBlogsType:BlogTypeRecommended];
+            
+            newsViewCtl.needCache = YES;
+            hotNewsViewCtl.needCache = YES;
+            blogViewCtl.needCache = YES;
+            recommendBlogViewCtl.needCache = YES;
+            
+            
+            newsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
+                                                                               andSubTitles:subTitle[index]
+                                                                             andControllers:@[newsViewCtl, hotNewsViewCtl, blogViewCtl,recommendBlogViewCtl]
+                                                                                underTabbar:YES];
+        }
+        else if([itemId[index] isEqualToString:@"tweet"]) {
+            
+            newTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeAllTweets];
+            hotTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeHotestTweets];
+            myTweetViewCtl = [[TweetsViewController alloc] initWithTweetsType:TweetsTypeOwnTweets];
+            
+            newTweetViewCtl.needCache = YES;
+            hotTweetViewCtl.needCache = YES;
+            myTweetViewCtl.needCache = YES;
+            
+            
+            tweetsSVC = [[SwipableViewController alloc] initWithTitle:title[index]
+                                                                                 andSubTitles:subTitle[index]
+                                                                               andControllers:@[newTweetViewCtl, hotTweetViewCtl, myTweetViewCtl]
+                                                                                  underTabbar:YES];
+            
+        }
+        else if([itemId[index] isEqualToString:@"action"]) {
+        }
+        else if([itemId[index] isEqualToString:@"discover"]) {
+            UIStoryboard *discoverSB = [UIStoryboard storyboardWithName:@"Discover" bundle:nil];
+            discoverNav = [discoverSB instantiateViewControllerWithIdentifier:@"Nav"];
+            
+        }
+        else if([itemId[index] isEqualToString:@"me"]) {
+            UIStoryboard *homepageSB = [UIStoryboard storyboardWithName:@"Homepage" bundle:nil];
+            homepageNav = [homepageSB instantiateViewControllerWithIdentifier:@"Nav"];
+        }
+        
+    }
+
     
     self.tabBar.translucent = NO;
     self.viewControllers = @[
+                             //[self addNavigationItemForViewController:sxNewsSVC],
                              [self addNavigationItemForViewController:newsSVC],
                              [self addNavigationItemForViewController:tweetsSVC],
                              [UIViewController new],
                              discoverNav,
                              homepageNav,
                              ];
-    /*
-    NSArray *titles = @[@"综合", @"动弹", @"", @"发现", @"我"];
-    NSArray *images = @[@"tabbar-news", @"tabbar-tweet", @"", @"tabbar-discover", @"tabbar-me"];
-     */
+
     
     [self.tabBar.items enumerateObjectsUsingBlock:^(UITabBarItem *item, NSUInteger idx, BOOL *stop) {
-        [item setTitle:kTabItemTitles[idx]];
-        [item setImage:[UIImage imageNamed:kTabItemImages[idx]]];
-        [item setSelectedImage:[UIImage imageNamed:[kTabItemImages[idx] stringByAppendingString:@"-selected"]]];
+        [item setTitle:[title objectAtIndex:idx]];
+        [item setImage:[UIImage imageNamed:image[idx]]];
+        [item setSelectedImage:[UIImage imageNamed:[image[idx] stringByAppendingString:@"-selected"]]];
     }];
+    
     [self.tabBar.items[2] setEnabled:NO];
     
     [self addCenterButtonWithImage:[UIImage imageNamed:@"tabbar-more"]];
@@ -195,11 +262,6 @@
     _length = 60;        // 圆形按钮的直径
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
     
-    /*
-    NSArray *buttonTitles = @[@"文字", @"相册", @"拍照", @"语音", @"扫一扫", @"找人"];
-    NSArray *buttonImages = @[@"tweetEditing", @"picture", @"shooting", @"sound", @"scan", @"search"];
-    int buttonColors[] = {0xe69961, 0x0dac6b, 0x24a0c4, 0xe96360, 0x61b644, 0xf1c50e};
-     */
     
     for (int i = 0; i < 6; i++) {
         OptionButton *optionButton = [[OptionButton alloc] initWithTitle:kButtonTitles[i]

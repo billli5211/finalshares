@@ -1,0 +1,114 @@
+{
+    "menuItems":[
+             {
+             "id":"qa",
+             "enable":"true",
+             "title":"技术问答",
+             "image":"sidemenu_QA",
+             "subTitle":["提问", "分享", "综合", "职业", "站务"]
+             },
+             {
+             "id":"software",
+             "enable":"true",
+             "title":"开源软件",
+             "image":"sidemenu-software",
+             "subTitle":["分类", "推荐", "最新", "热门", "国产"]
+             },
+             {
+             "id":"blog",
+             "enable":"true",
+             "title":"博客区",
+             "image":"sidemenu_blog",
+             "subTitle":["最新博客", "推荐阅读"]
+             },
+             {
+             "id":"weibo",
+             "enable":"true",
+             "title":"微博",
+             "image":"sidemenu-night",
+             "subTitle":[]
+             },
+             {
+             "id":"photo",
+             "enable":"true",
+             "title":"图片",
+             "image":"sidemenu-night",
+             "subTitle":[]
+             },
+             {
+             "id":"video",
+             "enable":"true",
+             "title":"视频",
+             "image":"sidemenu-night",
+             "subTitle":[]
+             },
+             {
+             "id":"news",
+             "enable":"true",
+             "title":"新闻",
+             "image":"sidemenu-night",
+             "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
+             },
+             {
+             "id":"setting",
+             "enable":"true",
+             "title":"设置",
+             "image":"sidemenu_setting",
+             "subTitle":[]
+             },
+             {
+             "id":"info",
+             "enable":"true",
+             "title":"信息查询",
+             "image":"sidemenu_setting",
+             "subTitle":[]
+             }
+             ],
+    
+    
+    "tabItems":[
+                {
+                "id":"news",
+                "enable":"false",
+                "title":"新闻",
+                "image":"sidemenu-night",
+                "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
+                },
+                 {
+                 "id":"synthesization",
+                 "enable":"true",
+                 "title":"科技",
+                 "image":"tabbar-news",
+                 "subTitle":["资讯", "热点", "博客", "推荐"]
+                 },
+                 {
+                 "id":"tweet",
+                 "enable":"true",
+                 "title":"动弹",
+                 "image":"tabbar-tweet",
+                 "subTitle":["最新动弹", "热门动弹", "我的动弹"]
+                 },
+                 {
+                 "id":"action",
+                 "enable":"true",
+                 "title":"",
+                 "image":"",
+                 "subTitle":[]
+                 },
+                 {
+                 "id":"discover",
+                 "enable":"true",
+                 "title":"发现",
+                 "image":"tabbar-discover",
+                 "subTitle":[]
+                 },
+                 {
+                 "id":"me",
+                 "enable":"true",
+                 "title":"我",
+                 "image":"tabbar-me",
+                 "subTitle":[]
+                 }
+                 ]
+
+}

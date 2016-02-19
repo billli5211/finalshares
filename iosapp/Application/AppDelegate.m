@@ -22,6 +22,7 @@
 #import <UMengSocial/UMSocialWechatHandler.h>
 #import <UMengSocial/UMSocialSinaHandler.h>
 
+#import "FSAPI.h"
 #import "JsonUtils.h"
 
 @interface AppDelegate () <UIApplicationDelegate>
@@ -107,7 +108,7 @@
     
     
     //
-    [self setupLeftMenu];
+    [self setupCustomConfig];
     
     return YES;
 }
@@ -172,34 +173,29 @@
 
 # pragma BackgroundFetch
 
--(void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler{
-    NSDate *fetchStart = [NSDate date];
+- (void) setupCustomConfig{
+    // Updating menu/tab from server JSON
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDirectory = [paths objectAtIndex:0];
-    NSString *menuPath = [docDirectory stringByAppendingPathComponent:@"menuData"];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
-        _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
-    }
-}
-
-
-- (void) setupLeftMenu{
-    // Updating menu from server JSON
-    
-    NSString *menuUrl = [NSString stringWithFormat:@"http://www.whitehouse.gov/sites/default/files/feeds/config.json"];
+    NSString *menuUrl = [NSString stringWithFormat:FSAPI_CUSTOMIZE_CONFIG];
     NSURL *url = [NSURL URLWithString:menuUrl];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *docDirectory = [paths objectAtIndex:0];
     NSString *menuPath = [docDirectory stringByAppendingPathComponent:@"menuData"];
+    NSString *tabPath = [docDirectory stringByAppendingPathComponent:@"tabData"];
     
+    __block NSArray *_menuJSON = NULL;
+    __block NSArray *_tabJSON = NULL;
     
     if USE_STAGING_FEEDS {
-        _menuJSON = [JsonUtils getConfig:@"menuConfig" with:@"menuItems"];
+        _menuJSON = [JsonUtils getConfig:@"customizeConfig" with:@"menuItems"];
         [_menuJSON writeToFile:menuPath atomically: YES];
         _menuItems = [[NSMutableArray alloc] initWithArray: _menuJSON];
+        
+        _tabJSON = [JsonUtils getConfig:@"customizeConfig" with:@"tabItems"];
+        [_tabJSON writeToFile:tabPath atomically: YES];
+        _tabItems = [[NSMutableArray alloc] initWithArray: _tabJSON];
         
     }else{
         AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
@@ -216,12 +212,26 @@
 
             }
             
+            _tabJSON = responseObject[@"tabItems"];
+            if (![_tabJSON writeToFile:tabPath atomically:YES]) {
+                NSLog(@"Couldn't save tab config");
+            }
+            if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
+                _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
+                
+            }
+            
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
             if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
                 _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
             }
-            NSLog(@"Error fetching menu config");
+            
+            if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
+                _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
+            }
+            
+            NSLog(@"Error fetching customized config");
         }];
         [operation start];
     }
@@ -230,6 +240,10 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:menuPath]) {
         _menuItems = [[NSMutableArray alloc] initWithContentsOfFile:menuPath];
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:tabPath]) {
+        _tabItems = [[NSMutableArray alloc] initWithContentsOfFile:tabPath];
     }
 }
 
