@@ -32,6 +32,7 @@
 
 #import "AppDelegate.h"
 #import "SXTableViewController.h"
+#import "FSThreadViewController.h"
 
 @interface OSCTabBarController () <UITabBarControllerDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 {
@@ -45,6 +46,8 @@
     TweetsViewController *myTweetViewCtl;
     
     NSMutableArray *sxControllers;
+    
+    NSMutableArray *fsControllers;
     
 }
 
@@ -158,7 +161,9 @@
     SwipableViewController *tweetsSVC = NULL;
     UINavigationController *discoverNav = NULL;
     UINavigationController *homepageNav = NULL;
+    
     SwipableViewController *sxNewsSVC = NULL;
+    SwipableViewController *fsForumSVC = NULL;
     
     NSMutableArray *vcArray = [[NSMutableArray alloc] init];
     
@@ -182,6 +187,22 @@
             
             [vcArray addObject:[self addNavigationItemForViewController:sxNewsSVC withSearch:false]];
             
+        }
+        
+        else if ([itemId[index] isEqualToString:@"fs"]){
+
+            fsControllers = [[NSMutableArray alloc] init];
+
+            [fsControllers addObject: [[FSThreadViewController alloc] initWithFSType:FSTypeDate]];
+            [fsControllers addObject: [[FSThreadViewController alloc] initWithFSType:FSTypeHot]];
+            [fsControllers addObject: [[FSThreadViewController alloc] initWithFSType:FSTypeRecommend]];
+            
+            
+            fsForumSVC = [[SwipableViewController alloc] initWithTitle:title[index]
+                                                         andSubTitles:subTitle[index]
+                                                       andControllers:fsControllers];
+            
+            [vcArray addObject:[self addNavigationItemForViewController:fsForumSVC withSearch:false]];
         }
         
         else if ([itemId[index] isEqualToString:@"synthesization"]) {

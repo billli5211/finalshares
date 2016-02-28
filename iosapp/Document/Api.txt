@@ -1,0 +1,292 @@
+﻿极分享API定义
+
+1.//获取category
+http://finalshares.com/index.php?m=3g&a=runJson
+
+2. //按话题获取文章目录  比如获取“安卓开发”下的文章
+http://finalshares.com/index.php?m=3g&a=runJson&categorieId=2
+
+3. //获取最新，推荐和热门
+http://finalshares.com/index.php?m=3g&a=runJson&order=postdate
+http://finalshares.com/index.php?m=3g&a=runJson&order=recommend
+http://finalshares.com/index.php?m=3g&a=runJson&order=hot
+
+4. //获取文章详情
+http://finalshares.com/read-7353    每篇文章都有唯一编号比如：7453
+
+5. //获取某页数据，加上"&page=2"之类的
+http://finalshares.com/index.php?m=3g&a=runJson&categorieId=2&page=2
+
+下列接口必须登陆之后才能得到具体值
+
+1.获取私信和通知未读消息数目：
+http://finalshares.com/3g-index-runJson
+增加messages和notices
+
+2.获取通知：
+http://finalshares.com/3g-notice-runJson
+
+3.获取私信：
+http://finalshares.com/3g-message-runJson
+
+登录相关
+1.http://finalshares.com/3g-login-dorun
+post提交，带的参数：
+账号: username
+密码：password
+验证码：code
+
+2.获取验证码
+http://finalshares.com/verify-index-getJson
+返回验证码图片路径
+登陆时判断验证码是否正确，失败后需要刷新验证码
+
+
+3. 去掉验证码的登陆接口
+http://finalshares.com/3g-login-dorunJson
+参数username，password.
+post方式提交
+返回结果和用户信息
+
+
+
+{
+"page": 1,
+"perpage": 18,
+"count": 2716,
+"totalpage": 151,
+"threaddb": [
+{
+"tid": "1026",
+"fid": "117",
+"topic_type": "0",
+"subject": "【最新福利】让你的手机自由翻墙，利器“蓝灯”来了，可以科学上网了有木有@^@",
+"overtime": "0",
+"highlight": "#C00000~~~",
+"inspect": "",
+"ifshield": "0",
+"digest": "0",
+"topped": "1",
+"disabled": "0",
+"ischeck": "1",
+"replies": "191",
+"hits": 47282,
+"like_count": "58",
+"special": "0",
+"tpcstatus": "8",
+"ifupload": "5",
+"created_time": "2015-11-20 18:19",
+"created_username": "极分享",
+"created_userid": "12",
+"created_ip": "59.175.154.194",
+"modified_time": "0",
+"modified_username": "潇潇宇",
+"modified_userid": "80",
+"modified_ip": "221.232.100.57",
+"lastpost_time": "2016-02-27 10:02",
+"lastpost_userid": "8559",
+"lastpost_username": "难看的哭了",
+"special_sort": "101",
+"reply_notice": "1",
+"reply_topped": "0",
+"thread_status": "0",
+"icon": "topichot",
+"highlight_style": "color:#C00000",
+"avatarImg": "http://finalshares.cn//windid/attachment/avatar/000/00/00/12_small.jpg",
+"pw_lastpost_time": "2015-11-20 18:19",
+"content": "",
+"forumsName": "炫酷工具",
+"contentResume": "
+
+Lantern是一款开源软件，任何人都可以查看源代码来获知其工作机制，自己做出判断。我们非常欢迎安全专家来审计，你也可以自己编译出软件包的哦！
+
+★如何安装？
+考虑到用Windows的读者比较多，…"
+},
+{
+"tid": "7358",
+"fid": "53",
+"topic_type": "0",
+"subject": "iOS开发中WebView的基本使用",
+"overtime": "0",
+"highlight": "",
+"inspect": "",
+"ifshield": "0",
+"digest": "0",
+"topped": "0",
+"disabled": "0",
+"ischeck": "1",
+"replies": "0",
+"hits": "31",
+"like_count": "0",
+"special": "0",
+"tpcstatus": "0",
+"ifupload": "0",
+"created_time": "2016-02-24 22:32",
+"created_username": "bill",
+"created_userid": "10",
+"created_ip": "27.189.202.24",
+"modified_time": "0",
+"modified_username": "bill",
+"modified_userid": "10",
+"modified_ip": "27.189.202.24",
+"lastpost_time": "2016-02-24 22:32",
+"lastpost_userid": "10",
+"lastpost_username": "bill",
+"special_sort": "0",
+"reply_notice": "1",
+"reply_topped": "0",
+"thread_status": "0",
+"icon": "topic",
+"avatarImg": "http://finalshares.cn//windid/attachment/avatar/000/00/00/10_small.jpg",
+"pw_lastpost_time": "2016-02-24 22:32",
+"content": "",
+"forumsName": "iOS功能",
+"contentResume": "1、使用UIWebView加载网页
+运行XCode，新建一个SingleViewApplication，命名为WebViewDemo。
+
+2、加载WebView
+在ViewController.h添加…"
+},
+{
+"tid": "7357",
+"fid": "112",
+"topic_type": "0",
+"subject": "让你读懂互联网的八个神奇定律",
+"overtime": "0",
+"highlight": "",
+"inspect": "",
+"ifshield": "0",
+"digest": "0",
+"topped": "0",
+"disabled": "0",
+"ischeck": "1",
+"replies": "1",
+"hits": "56",
+"like_count": "1",
+"special": "0",
+"tpcstatus": "0",
+"ifupload": "0",
+"created_time": "2016-02-24 20:14",
+"created_username": "无根花生",
+"created_userid": "13",
+"created_ip": "27.19.175.87",
+"modified_time": "0",
+"modified_username": "无根花生",
+"modified_userid": "13",
+"modified_ip": "27.19.175.87",
+"lastpost_time": "2016-02-24 21:51",
+"lastpost_userid": "2599",
+"lastpost_username": "yonghengprince",
+"special_sort": "0",
+"reply_notice": "1",
+"reply_topped": "0",
+"thread_status": "0",
+"icon": "topic",
+"avatarImg": "http://finalshares.cn//windid/attachment/avatar/000/00/00/13_small.jpg",
+"pw_lastpost_time": "2016-02-24 20:14",
+"content": "",
+"forumsName": "随手记",
+"contentResume": "
+世界上有很多经典定律，像看不见的手，引导着世间的一切。
+互联网风云变幻，也离不开一些神奇的定律。读懂这些定律，才能读懂互联网的过去和未来。
+跷跷板定律
+要让对方高一些，就必须使自己低一些;要让自己高…"
+}
+],
+"categories": {
+"1": {
+"category_id": "1",
+"category_name": "视觉设计",
+"alias": "",
+"vieworder": "1",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"2": {
+"category_id": "2",
+"category_name": "Android开发",
+"alias": "",
+"vieworder": "2",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"3": {
+"category_id": "3",
+"category_name": "iOS开发",
+"alias": "",
+"vieworder": "3",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"4": {
+"category_id": "4",
+"category_name": "跨平台开发",
+"alias": "",
+"vieworder": "7",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"5": {
+"category_id": "5",
+"category_name": "前端开发",
+"alias": "",
+"vieworder": "4",
+"tag_count": "0",
+"seo_title": "图片",
+"seo_description": "图片测试",
+"seo_keywords": "图片 乔布斯"
+},
+"6": {
+"category_id": "6",
+"category_name": "服务器架构",
+"alias": "",
+"vieworder": "6",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"7": {
+"category_id": "7",
+"category_name": "编程语言",
+"alias": "",
+"vieworder": "8",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"23": {
+"category_id": "23",
+"category_name": "超级工具箱",
+"alias": "",
+"vieworder": "9",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+},
+"26": {
+"category_id": "26",
+"category_name": "后端开发",
+"alias": "",
+"vieworder": "5",
+"tag_count": "0",
+"seo_title": "",
+"seo_description": "",
+"seo_keywords": ""
+}
+}
+}
+
+
+

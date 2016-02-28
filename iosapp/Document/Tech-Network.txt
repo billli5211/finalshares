@@ -1,0 +1,103 @@
+﻿
+Reference:
+http://www.cnblogs.com/ShaoYinling/p/4731436.html?utm_source=tuicool&utm_medium=referral
+http://www.finalshares.com/read-6832
+
+1.
+（1）AFHTTPRequestOperationManager
+
+usage:
+example1: file Extand/Network/NetRequest: used by Main/Plugin/Weibo
+AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+
+AFHTTPRequestOperation *op = [manager GET:requestURLString parameters:parameter success:^(AFHTTPRequestOperation *operation, id responseObject) {
+NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+DDLog(@"%@", dic);
+
+block(dic);
+
+} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+NSLog(@"%@", [error description]);
+failureBlock();
+}];
+
+op.responseSerializer = [AFHTTPResponseSerializer serializer];
+
+[op start];
+
+
+example2: through class inheritance, and make it sington.
+
+@interface SXHTTPManager : AFHTTPRequestOperationManager
+
++ (instancetype)manager;
+
+@end
+
+
+
+(2)NSURLConnection: Apple network interface
+
+//创建请求
+NSMutableURLRequest  *request=[NSMutableURLRequest requestWithURL:url];//默认为get请求
+//设置最大的网络等待时间
+request.timeoutInterval=20.0;
+
+//获取主队列
+NSOperationQueue *queue=[NSOperationQueue mainQueue];
+//发起请求
+[NSURLConnection sendAsynchronousRequest:request queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+//隐藏HUD
+//[MBProgressHUD hideHUD];
+
+
+if (data) {//如果请求成功，拿到服务器返回的数据
+//解析拿到的数据(JSON方式)
+NSDictionary *dict=[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
+//           NSArray *array=dict[@"video"];
+NSArray *array=dict[@"videos"];
+
+
+(3). AFHTTPSessionManager: wrap Apple's NSHTTPSessionManager--intruduced on ios7'
+@interface SXNetworkTools : AFHTTPSessionManager
+
++ (instancetype)sharedNetworkTools;
++ (instancetype)sharedNetworkToolsWithoutBaseUrl;
+
+
+
+
+
+
+2. parsing
+(1)苹果官方解析JSON串的NSJSONSerialization类，效率也大大了超过了所有的第三方类库。
+
+// 将JSON串转化为字典或者数组
+- (id)toArrayOrNSDictionary:(NSData *)jsonData{
+NSError *error = nil;
+id jsonObject = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingAllowFragments error:&error];
+
+if (jsonObject != nil && error == nil){
+return jsonObject;
+}else{
+// 解析错误
+return nil;
+}
+
+}
+
+(2) MJExtenstion:MJExtension是一套字典和模型之间互相转换的超轻量级框架
+https://github.com/CoderMJLee/MJExtension
+
+
+- (NSArray *)parseJson:(id)responseObject
+{
+//NSString *key = [responseObject.keyEnumerator nextObject];
+//NSArray *temArray = responseObject[key];
+
+NSArray *temArray = responseObject[@"threaddb"];
+
+NSArray *arrayM = [FSThread objectArrayWithKeyValuesArray:temArray];
+
+return arrayM;
+}

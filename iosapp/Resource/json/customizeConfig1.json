@@ -3,49 +3,49 @@
              {
              "id":"qa",
              "enable":"true",
-             "title":"技术问答",
+             "title":"视觉设计",
              "image":"sidemenu_QA",
-             "subTitle":["提问", "分享", "综合", "职业", "站务"]
+             "subTitle":["设计案例", "设计素材", "设计工具", "", ""]
              },
              {
              "id":"software",
              "enable":"true",
-             "title":"开源软件",
+             "title":"Android开发",
              "image":"sidemenu-software",
              "subTitle":["分类", "推荐", "最新", "热门", "国产"]
              },
              {
              "id":"blog",
              "enable":"true",
-             "title":"博客区",
+             "title":"iOS开发",
              "image":"sidemenu_blog",
              "subTitle":["最新博客", "推荐阅读"]
              },
              {
              "id":"weibo",
              "enable":"true",
-             "title":"微博",
+             "title":"前端开发",
              "image":"sidemenu-night",
              "subTitle":[]
              },
              {
              "id":"photo",
              "enable":"true",
-             "title":"图片",
+             "title":"头端开发",
              "image":"sidemenu-night",
              "subTitle":[]
              },
              {
              "id":"video",
              "enable":"true",
-             "title":"视频",
+             "title":"服务器架构",
              "image":"sidemenu-night",
              "subTitle":[]
              },
              {
              "id":"news",
              "enable":"true",
-             "title":"新闻",
+             "title":"跨平台开发",
              "image":"sidemenu-night",
              "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
              },
@@ -59,7 +59,7 @@
              {
              "id":"info",
              "enable":"true",
-             "title":"信息查询",
+             "title":"工具工具箱",
              "image":"sidemenu_setting",
              "subTitle":[]
              }
@@ -69,28 +69,21 @@
     "tabItems":[
                 {
                 "id":"news",
-                "enable":"false",
-                "title":"新闻",
+                "enable":"true",
+                "title":"热门",
                 "image":"sidemenu-night",
                 "subTitle":["头条", "NBA","手机", "移动互联","娱乐", "时尚","电影", "科技"]
                 },
-                {
-                "id":"fs",
-                "enable":"true",
-                "title":"论坛",
-                "image":"tabbar-news",
-                "subTitle":["最新", "热门", "解决方案"]
-                },
                  {
                  "id":"synthesization",
-                 "enable":"false",
-                 "title":"科技",
+                 "enable":"true",
+                 "title":"最新",
                  "image":"tabbar-news",
                  "subTitle":["资讯", "热点", "博客", "推荐"]
                  },
                  {
                  "id":"tweet",
-                 "enable":"true",
+                 "enable":"false",
                  "title":"动弹",
                  "image":"tabbar-tweet",
                  "subTitle":["最新动弹", "热门动弹", "我的动弹"]

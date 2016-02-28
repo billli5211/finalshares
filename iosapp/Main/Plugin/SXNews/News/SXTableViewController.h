@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "OSCObjsViewController.h"
 
-@interface SXTableViewController : OSCObjsViewController
+@interface SXTableViewController : UITableViewController
 
 /**
  *  url端口
