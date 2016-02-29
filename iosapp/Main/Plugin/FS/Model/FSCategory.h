@@ -8,8 +8,8 @@
 
 #import "OSCBaseObject.h"
 
-@interface FSCategory : OSCBaseObject
-
-
+@interface FSCategory : NSObject
+@property (nonatomic,assign)int category_id;
+@property (nonatomic,copy) NSString *category_name;
 
 @end

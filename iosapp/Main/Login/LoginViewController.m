@@ -26,6 +26,9 @@
 
 #import "SignUpViewController.h"
 
+#import "SXNetworkTools.h"
+#import "FSAPI.h"
+
 static NSString * const kShowAccountOperation = @"ShowAccountOperation";
 
 
@@ -158,39 +161,32 @@ static NSString * const kShowAccountOperation = @"ShowAccountOperation";
     _hud.labelText = @"正在登录";
     _hud.userInteractionEnabled = NO;
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager OSCManager];
+    NSLog(@"username=%@&password=@", _accountField.text, _passwordField.text);
+    NSString* url = [NSString stringWithFormat:@"%@?&username=bill&password=bill", FSAPI_LOGIN_WITHOUT_CODE];
     
-    [manager POST:[NSString stringWithFormat:@"%@%@", OSCAPI_HTTPS_PREFIX, OSCAPI_LOGIN_VALIDATE]
-       parameters:@{@"username" : _accountField.text, @"pwd" : _passwordField.text, @"keep_login" : @(1)}
-          success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseObject) {
-              ONOXMLElement *result = [responseObject.rootElement firstChildWithTag:@"result"];
-              
-              NSInteger errorCode = [[[result firstChildWithTag:@"errorCode"] numberValue] integerValue];
-              if (!errorCode) {
-                  NSString *errorMessage = [[result firstChildWithTag:@"errorMessage"] stringValue];
-                  
-                  _hud.mode = MBProgressHUDModeCustomView;
-                  _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-                  _hud.labelText = [NSString stringWithFormat:@"错误：%@", errorMessage];
-                  [_hud hide:YES afterDelay:1];
-                  
-                  return;
-              }
-              
-              [Config saveOwnAccount:_accountField.text andPassword:_passwordField.text];
-              ONOXMLElement *userXML = [responseObject.rootElement firstChildWithTag:@"user"];
-              
-              [self renewUserWithXML:userXML];
-          } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-              _hud.mode = MBProgressHUDModeCustomView;
-              _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
-              _hud.labelText = [@(operation.response.statusCode) stringValue];
-              _hud.detailsLabelText = error.userInfo[NSLocalizedDescriptionKey];
-              
-              [_hud hide:YES afterDelay:1];
-          }
-     ];
-}
+    [[[SXNetworkTools sharedNetworkTools]POST:url
+                                  parameters:nil
+                                  success:^(NSURLSessionDataTask *task, NSDictionary* responseObject) {
+                                      int result = 0;
+                /*
+                                      [Config saveOwnAccount:_accountField.text andPassword:_passwordField.text];
+                                      ONOXMLElement *userXML = [responseObject.rootElement firstChildWithTag:@"user"];
+                                      
+                                      [self renewUserWithXML:userXML];
+                 */
+        
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+        _hud.mode = MBProgressHUDModeCustomView;
+        _hud.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"HUD-error"]];
+        //_hud.labelText = [@(operation.response.statusCode) stringValue];
+        _hud.detailsLabelText = error.userInfo[NSLocalizedDescriptionKey];
+        
+        [_hud hide:YES afterDelay:1];
+    }] resume];
+
+   }
 
 - (IBAction)signUp
 {

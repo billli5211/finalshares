@@ -33,6 +33,10 @@
 #import "SXTableViewController.h"
 #import "InfoProvidersPage.h"
 #import "MediaViewer.h"
+#import "FSAPI.h"
+#import "SXNetworkTools.h"
+#import "FSCategory.h"
+#import "FSThreadViewController.h"
 
 @implementation SideMenuViewController
 
@@ -51,9 +55,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dawnAndNightMode:) name:@"dawnAndNight" object:nil];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    _menuItems = appDelegate.menuItems;
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleMenuUpdated:) name:@"menuUpdate" object:nil];
 }
 
 - (void)dawnAndNightMode:(NSNotification *)center
@@ -61,6 +63,15 @@
     self.tableView.backgroundColor = [UIColor titleBarColor];
     [self.tableView reloadData];
 }
+
+- (void)handleMenuUpdated:(NSNotification *)center
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+    });
+    
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -125,6 +136,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.menuItems = appDelegate.menuItems;
     return [self.menuItems count];
 }
 
@@ -251,6 +264,13 @@
         InfoProvidersPage *page = [InfoProvidersPage new];
         [self setContentViewController:page];
     }
+    else{
+        int cid = [itemId intValue];
+        if(cid >= 0 && cid < 100){
+            FSThreadViewController *thread = [[FSThreadViewController alloc] initWithCategory:cid];
+            [self setContentViewController:thread];
+        }
+    }
 }
 
 - (NSArray *)arrayLists
@@ -291,6 +311,7 @@
         [self.tableView reloadData];
     });
 }
+
 
 
 @end

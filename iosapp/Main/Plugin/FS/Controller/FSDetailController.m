@@ -7,7 +7,7 @@
 //
 
 #import "FSDetailController.h"
-
+#import "FSAPI.h"
 
 @interface FSDetailController ()<UIWebViewDelegate>
 @property (strong, nonatomic) UIWebView *webView;
@@ -28,9 +28,11 @@
 }
 
 
-- (instancetype)initWithModel:(FSThread *)post
+- (instancetype)initWithModel:(FSThread *)thread
 {
     self = [super init];
+    
+    _urlId = thread.tid;
     return self;
     
 }
@@ -39,7 +41,9 @@
 {
     [super viewDidLoad];
     webView2 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, SXSCREEN_W, 700)];
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://finalshares.com/read-7310"]];
+
+    NSString* url = [NSString stringWithFormat:@"%@%d", FSAPI_ARTICLE_DETAIL, _urlId];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:url]];
     [self.view addSubview: webView2];
     [webView2 loadRequest:request];
 }

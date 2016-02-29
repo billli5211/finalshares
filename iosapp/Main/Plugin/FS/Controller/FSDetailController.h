@@ -16,7 +16,7 @@
 
 @property(nonatomic,strong) FSThread *newsModel;
 
-@property (nonatomic,assign) NSInteger index;
+@property (nonatomic,assign) int urlId;
 
 
 - (instancetype)initWithModel:(FSThread *)post;

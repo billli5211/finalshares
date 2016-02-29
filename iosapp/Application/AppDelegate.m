@@ -24,6 +24,8 @@
 
 #import "FSAPI.h"
 #import "JsonUtils.h"
+#import "FSCategory.h"
+#import "SXNetworkTools.h"
 
 @interface AppDelegate () <UIApplicationDelegate>
 
@@ -199,6 +201,8 @@
         [actionJSON writeToFile:actionPath atomically: YES];
         _actionItems = [[NSMutableArray alloc] initWithArray: actionJSON];
         
+        [self appendMoreMenus];
+        
     }else{
         
         NSString *custUrl = [NSString stringWithFormat:FSAPI_CUSTOMIZE_CONFIG];
@@ -273,5 +277,43 @@
 }
 
 
+#pragma mark - load more menus
+- (void)appendMoreMenus
+{
+    [[[SXNetworkTools sharedNetworkTools]GET:FSAPI_CATEGORY parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary* responseObject) {
+        
+        NSDictionary *dict = responseObject[@"categories"];
+        NSMutableArray *newMenuItems = [[NSMutableArray alloc]init];
+        
+        for(id key in dict)
+        {
+            NSDictionary *data=[dict objectForKey:key];
+            //NSLog(@"key: %@,value: %@",key, data);
+            
+            FSCategory *category = [FSCategory mj_objectWithKeyValues:data];
+            NSLog(@"id: %d,name: %@",category.category_id, category.category_name);
+            
+            NSString* cid = [[NSString alloc] initWithFormat:@"%d",category.category_id];
+            NSString* cname = category.category_name;
+            NSDictionary *test_dictionary = [NSDictionary dictionaryWithObjectsAndKeys:cid , @"id",
+                                             cname ,@"title", @"sidemenu_setting", @"image",
+                                             nil];
+            
+            [newMenuItems addObject:test_dictionary];
+            
+            
+        }
+        
+        [newMenuItems addObjectsFromArray:self.menuItems];
+        self.menuItems = newMenuItems;
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"menuUpdate" object:nil];
+
+        
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"%@",error);
+    }] resume];
+    
+   }
 
 @end

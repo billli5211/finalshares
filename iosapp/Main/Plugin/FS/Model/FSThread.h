@@ -29,10 +29,21 @@
 @property (nonatomic,assign)int hits;
 @property (nonatomic,assign)int like_count;
 
-@property (nonatomic, assign) int64_t created_time;
+//"created_time": "1453522644",
+//@property (nonatomic, assign) int64_t created_time;
+// "created_time": "2015-11-20 18:19",
+@property (nonatomic,copy) NSString *created_time;
 
+@property (nonatomic,copy) NSString *created_username;
+@property (nonatomic, assign) double created_userid;
+@property (nonatomic,copy) NSString *avatarImg;
 
+@property (nonatomic,copy) NSString *forumsName;
+@property (nonatomic,copy) NSString *contentResume;
 
-+ (instancetype)newsModelWithDict:(NSDictionary *)dict;
+@property (nonatomic,copy) NSString *lastpost_time;
+@property (nonatomic,copy) NSString *lastpost_username;
+@property (nonatomic, assign) double lastpost_userid;
+
 
 @end

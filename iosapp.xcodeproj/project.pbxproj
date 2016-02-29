@@ -11,17 +11,17 @@
 		00D6BCE319EB673200E8754E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6BCE219EB673200E8754E /* AppDelegate.m */; };
 		00D6BCFD19EB673200E8754E /* iosappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00D6BCFC19EB673200E8754E /* iosappTests.m */; };
 		092E0DBC1C5A854D001AAF79 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 092E0DBB1C5A854D001AAF79 /* MediaPlayer.framework */; };
-		0982B02F1C7F3D8400E6424A /* FSObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B02E1C7F3D8400E6424A /* FSObjsViewController.m */; };
-		0982B04A1C7F3D9700E6424A /* FSDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0331C7F3D9700E6424A /* FSDetailController.m */; };
-		0982B04B1C7F3D9700E6424A /* FSThreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0351C7F3D9700E6424A /* FSThreadCell.m */; };
-		0982B04C1C7F3D9700E6424A /* FSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0371C7F3D9700E6424A /* FSThreadViewController.m */; };
-		0982B04D1C7F3D9700E6424A /* FSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B03A1C7F3D9700E6424A /* FSCategory.m */; };
-		0982B04E1C7F3D9700E6424A /* FSForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B03C1C7F3D9700E6424A /* FSForum.m */; };
-		0982B04F1C7F3D9700E6424A /* FSPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B03E1C7F3D9700E6424A /* FSPage.m */; };
-		0982B0501C7F3D9700E6424A /* FSTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0401C7F3D9700E6424A /* FSTag.m */; };
-		0982B0511C7F3D9700E6424A /* FSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0421C7F3D9700E6424A /* FSThread.m */; };
-		0982B0521C7F3D9700E6424A /* FSThreadDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0441C7F3D9700E6424A /* FSThreadDetails.m */; };
-		0982B0541C7F3D9700E6424A /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B0491C7F3D9700E6424A /* FSUtils.m */; };
+		093194051C84286500BCDF95 /* FSObjsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194041C84286500BCDF95 /* FSObjsViewController.m */; };
+		0931941E1C84291D00BCDF95 /* FSDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194091C84291D00BCDF95 /* FSDetailController.m */; };
+		0931941F1C84291D00BCDF95 /* FSThreadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931940B1C84291D00BCDF95 /* FSThreadCell.m */; };
+		093194201C84291D00BCDF95 /* FSThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931940D1C84291D00BCDF95 /* FSThreadViewController.m */; };
+		093194211C84291D00BCDF95 /* FSCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194101C84291D00BCDF95 /* FSCategory.m */; };
+		093194221C84291D00BCDF95 /* FSForum.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194121C84291D00BCDF95 /* FSForum.m */; };
+		093194231C84291D00BCDF95 /* FSPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194141C84291D00BCDF95 /* FSPage.m */; };
+		093194241C84291D00BCDF95 /* FSTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194161C84291D00BCDF95 /* FSTag.m */; };
+		093194251C84291D00BCDF95 /* FSThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 093194181C84291D00BCDF95 /* FSThread.m */; };
+		093194261C84291D00BCDF95 /* FSThreadDetails.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931941A1C84291D00BCDF95 /* FSThreadDetails.m */; };
+		093194271C84291D00BCDF95 /* FSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0931941D1C84291D00BCDF95 /* FSUtils.m */; };
 		0982B0571C7F3E5300E6424A /* Api.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0982B0561C7F3E5300E6424A /* Api.txt */; };
 		0982B0591C8043CD00E6424A /* fsCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 0982B0581C8043CD00E6424A /* fsCategory.json */; };
 		0982B0661C804A8E00E6424A /* SXHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0982B05D1C804A8E00E6424A /* SXHTTPManager.m */; };
@@ -666,28 +666,28 @@
 		00D6BCFB19EB673200E8754E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00D6BCFC19EB673200E8754E /* iosappTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iosappTests.m; sourceTree = "<group>"; };
 		092E0DBB1C5A854D001AAF79 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		0982B02D1C7F3D8400E6424A /* FSObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSObjsViewController.h; path = ../../../../fs_demo/iosapp/Main/Base/FSObjsViewController.h; sourceTree = "<group>"; };
-		0982B02E1C7F3D8400E6424A /* FSObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSObjsViewController.m; path = ../../../../fs_demo/iosapp/Main/Base/FSObjsViewController.m; sourceTree = "<group>"; };
-		0982B0321C7F3D9700E6424A /* FSDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDetailController.h; sourceTree = "<group>"; };
-		0982B0331C7F3D9700E6424A /* FSDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDetailController.m; sourceTree = "<group>"; };
-		0982B0341C7F3D9700E6424A /* FSThreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadCell.h; sourceTree = "<group>"; };
-		0982B0351C7F3D9700E6424A /* FSThreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadCell.m; sourceTree = "<group>"; };
-		0982B0361C7F3D9700E6424A /* FSThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadViewController.h; sourceTree = "<group>"; };
-		0982B0371C7F3D9700E6424A /* FSThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadViewController.m; sourceTree = "<group>"; };
-		0982B0391C7F3D9700E6424A /* FSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCategory.h; sourceTree = "<group>"; };
-		0982B03A1C7F3D9700E6424A /* FSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCategory.m; sourceTree = "<group>"; };
-		0982B03B1C7F3D9700E6424A /* FSForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSForum.h; sourceTree = "<group>"; };
-		0982B03C1C7F3D9700E6424A /* FSForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSForum.m; sourceTree = "<group>"; };
-		0982B03D1C7F3D9700E6424A /* FSPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPage.h; sourceTree = "<group>"; };
-		0982B03E1C7F3D9700E6424A /* FSPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPage.m; sourceTree = "<group>"; };
-		0982B03F1C7F3D9700E6424A /* FSTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTag.h; sourceTree = "<group>"; };
-		0982B0401C7F3D9700E6424A /* FSTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTag.m; sourceTree = "<group>"; };
-		0982B0411C7F3D9700E6424A /* FSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThread.h; sourceTree = "<group>"; };
-		0982B0421C7F3D9700E6424A /* FSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThread.m; sourceTree = "<group>"; };
-		0982B0431C7F3D9700E6424A /* FSThreadDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadDetails.h; sourceTree = "<group>"; };
-		0982B0441C7F3D9700E6424A /* FSThreadDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadDetails.m; sourceTree = "<group>"; };
-		0982B0481C7F3D9700E6424A /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
-		0982B0491C7F3D9700E6424A /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
+		093194031C84286500BCDF95 /* FSObjsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSObjsViewController.h; sourceTree = "<group>"; };
+		093194041C84286500BCDF95 /* FSObjsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSObjsViewController.m; sourceTree = "<group>"; };
+		093194081C84291D00BCDF95 /* FSDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSDetailController.h; sourceTree = "<group>"; };
+		093194091C84291D00BCDF95 /* FSDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSDetailController.m; sourceTree = "<group>"; };
+		0931940A1C84291D00BCDF95 /* FSThreadCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadCell.h; sourceTree = "<group>"; };
+		0931940B1C84291D00BCDF95 /* FSThreadCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadCell.m; sourceTree = "<group>"; };
+		0931940C1C84291D00BCDF95 /* FSThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadViewController.h; sourceTree = "<group>"; };
+		0931940D1C84291D00BCDF95 /* FSThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadViewController.m; sourceTree = "<group>"; };
+		0931940F1C84291D00BCDF95 /* FSCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCategory.h; sourceTree = "<group>"; };
+		093194101C84291D00BCDF95 /* FSCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCategory.m; sourceTree = "<group>"; };
+		093194111C84291D00BCDF95 /* FSForum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSForum.h; sourceTree = "<group>"; };
+		093194121C84291D00BCDF95 /* FSForum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSForum.m; sourceTree = "<group>"; };
+		093194131C84291D00BCDF95 /* FSPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSPage.h; sourceTree = "<group>"; };
+		093194141C84291D00BCDF95 /* FSPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSPage.m; sourceTree = "<group>"; };
+		093194151C84291D00BCDF95 /* FSTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSTag.h; sourceTree = "<group>"; };
+		093194161C84291D00BCDF95 /* FSTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSTag.m; sourceTree = "<group>"; };
+		093194171C84291D00BCDF95 /* FSThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThread.h; sourceTree = "<group>"; };
+		093194181C84291D00BCDF95 /* FSThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThread.m; sourceTree = "<group>"; };
+		093194191C84291D00BCDF95 /* FSThreadDetails.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSThreadDetails.h; sourceTree = "<group>"; };
+		0931941A1C84291D00BCDF95 /* FSThreadDetails.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSThreadDetails.m; sourceTree = "<group>"; };
+		0931941C1C84291D00BCDF95 /* FSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSUtils.h; sourceTree = "<group>"; };
+		0931941D1C84291D00BCDF95 /* FSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSUtils.m; sourceTree = "<group>"; };
 		0982B0561C7F3E5300E6424A /* Api.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Api.txt; sourceTree = "<group>"; };
 		0982B0581C8043CD00E6424A /* fsCategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fsCategory.json; sourceTree = "<group>"; };
 		0982B05C1C804A8E00E6424A /* SXHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SXHTTPManager.h; sourceTree = "<group>"; };
@@ -1688,54 +1688,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0982B0301C7F3D9700E6424A /* FS */ = {
+		093194061C84291D00BCDF95 /* FS */ = {
 			isa = PBXGroup;
 			children = (
-				0982B0311C7F3D9700E6424A /* Controller */,
-				0982B0381C7F3D9700E6424A /* Model */,
-				0982B0451C7F3D9700E6424A /* Utils */,
+				093194071C84291D00BCDF95 /* Controller */,
+				0931940E1C84291D00BCDF95 /* Model */,
+				0931941B1C84291D00BCDF95 /* Utils */,
 			);
-			name = FS;
-			path = ../../../../fs_demo/iosapp/Main/Plugin/FS;
+			path = FS;
 			sourceTree = "<group>";
 		};
-		0982B0311C7F3D9700E6424A /* Controller */ = {
+		093194071C84291D00BCDF95 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0982B0321C7F3D9700E6424A /* FSDetailController.h */,
-				0982B0331C7F3D9700E6424A /* FSDetailController.m */,
-				0982B0341C7F3D9700E6424A /* FSThreadCell.h */,
-				0982B0351C7F3D9700E6424A /* FSThreadCell.m */,
-				0982B0361C7F3D9700E6424A /* FSThreadViewController.h */,
-				0982B0371C7F3D9700E6424A /* FSThreadViewController.m */,
+				093194081C84291D00BCDF95 /* FSDetailController.h */,
+				093194091C84291D00BCDF95 /* FSDetailController.m */,
+				0931940A1C84291D00BCDF95 /* FSThreadCell.h */,
+				0931940B1C84291D00BCDF95 /* FSThreadCell.m */,
+				0931940C1C84291D00BCDF95 /* FSThreadViewController.h */,
+				0931940D1C84291D00BCDF95 /* FSThreadViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		0982B0381C7F3D9700E6424A /* Model */ = {
+		0931940E1C84291D00BCDF95 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0982B0391C7F3D9700E6424A /* FSCategory.h */,
-				0982B03A1C7F3D9700E6424A /* FSCategory.m */,
-				0982B03B1C7F3D9700E6424A /* FSForum.h */,
-				0982B03C1C7F3D9700E6424A /* FSForum.m */,
-				0982B03D1C7F3D9700E6424A /* FSPage.h */,
-				0982B03E1C7F3D9700E6424A /* FSPage.m */,
-				0982B03F1C7F3D9700E6424A /* FSTag.h */,
-				0982B0401C7F3D9700E6424A /* FSTag.m */,
-				0982B0411C7F3D9700E6424A /* FSThread.h */,
-				0982B0421C7F3D9700E6424A /* FSThread.m */,
-				0982B0431C7F3D9700E6424A /* FSThreadDetails.h */,
-				0982B0441C7F3D9700E6424A /* FSThreadDetails.m */,
+				0931940F1C84291D00BCDF95 /* FSCategory.h */,
+				093194101C84291D00BCDF95 /* FSCategory.m */,
+				093194111C84291D00BCDF95 /* FSForum.h */,
+				093194121C84291D00BCDF95 /* FSForum.m */,
+				093194131C84291D00BCDF95 /* FSPage.h */,
+				093194141C84291D00BCDF95 /* FSPage.m */,
+				093194151C84291D00BCDF95 /* FSTag.h */,
+				093194161C84291D00BCDF95 /* FSTag.m */,
+				093194171C84291D00BCDF95 /* FSThread.h */,
+				093194181C84291D00BCDF95 /* FSThread.m */,
+				093194191C84291D00BCDF95 /* FSThreadDetails.h */,
+				0931941A1C84291D00BCDF95 /* FSThreadDetails.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		0982B0451C7F3D9700E6424A /* Utils */ = {
+		0931941B1C84291D00BCDF95 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0982B0481C7F3D9700E6424A /* FSUtils.h */,
-				0982B0491C7F3D9700E6424A /* FSUtils.m */,
+				0931941C1C84291D00BCDF95 /* FSUtils.h */,
+				0931941D1C84291D00BCDF95 /* FSUtils.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -3191,8 +3190,8 @@
 		099820491C77747A00287549 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				0982B02D1C7F3D8400E6424A /* FSObjsViewController.h */,
-				0982B02E1C7F3D8400E6424A /* FSObjsViewController.m */,
+				093194031C84286500BCDF95 /* FSObjsViewController.h */,
+				093194041C84286500BCDF95 /* FSObjsViewController.m */,
 				0998204A1C77747A00287549 /* OSCObjsViewController.h */,
 				0998204B1C77747A00287549 /* OSCObjsViewController.m */,
 				0998204C1C77747A00287549 /* SwipableVC */,
@@ -3401,7 +3400,7 @@
 		099820A21C77747B00287549 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
-				0982B0301C7F3D9700E6424A /* FS */,
+				093194061C84291D00BCDF95 /* FS */,
 				099820A31C77747B00287549 /* City */,
 				099820B21C77747B00287549 /* InfoProviders */,
 				099820B51C77747B00287549 /* OSChina */,
@@ -5362,7 +5361,6 @@
 				099823451C77747C00287549 /* OSCMessage.m in Sources */,
 				099823531C77747C00287549 /* OSCSoftware.m in Sources */,
 				099823691C77747C00287549 /* EmojiPanelVC.m in Sources */,
-				0982B0541C7F3D9700E6424A /* FSUtils.m in Sources */,
 				099820421C76037900287549 /* UIView+Extension.m in Sources */,
 				0998235F1C77747C00287549 /* TeamUser.m in Sources */,
 				0998237B1C77747C00287549 /* MyOrderTopTabBar.m in Sources */,
@@ -5381,6 +5379,7 @@
 				099822EC1C77747C00287549 /* ShakingViewController.m in Sources */,
 				099822DE1C77747B00287549 /* ActivityDetailsCell.m in Sources */,
 				0998237D1C77747C00287549 /* global.m in Sources */,
+				093194271C84291D00BCDF95 /* FSUtils.m in Sources */,
 				099823811C77747C00287549 /* UILabel+Extension.m in Sources */,
 				099823BD1C77747C00287549 /* SXWeatherDetailVC.m in Sources */,
 				099823A81C77747C00287549 /* SXNewsCollectionController.m in Sources */,
@@ -5413,9 +5412,9 @@
 				0998232D1C77747C00287549 /* TeamMemberListViewController.m in Sources */,
 				099823C01C77747C00287549 /* SXWeatherDetailM.m in Sources */,
 				0998238C1C77747C00287549 /* Classmodel.m in Sources */,
-				0982B04B1C7F3D9700E6424A /* FSThreadCell.m in Sources */,
 				099823DB1C77747C00287549 /* MessageBubbleCell.m in Sources */,
 				099823121C77747C00287549 /* TeamRepliesBVC.m in Sources */,
+				0931941F1C84291D00BCDF95 /* FSThreadCell.m in Sources */,
 				099823101C77747C00287549 /* TeamActivityCell.m in Sources */,
 				099823AD1C77747C00287549 /* UIView+Frame.m in Sources */,
 				099823181C77747C00287549 /* TeamHomePage.m in Sources */,
@@ -5423,9 +5422,9 @@
 				099822D31C77747B00287549 /* OSCObjsViewController.m in Sources */,
 				0998234F1C77747C00287549 /* OSCReference.m in Sources */,
 				099823141C77747C00287549 /* TeamActivityViewController.m in Sources */,
-				0982B04A1C7F3D9700E6424A /* FSDetailController.m in Sources */,
 				099823841C77747C00287549 /* ShopCarFooterView.m in Sources */,
 				099820351C76037900287549 /* NSString+FontAwesome.m in Sources */,
+				0931941E1C84291D00BCDF95 /* FSDetailController.m in Sources */,
 				099822E01C77747C00287549 /* ActivityDetailsWithBarViewController.m in Sources */,
 				099823001C77747C00287549 /* BlogCell.m in Sources */,
 				099823CC1C77747C00287549 /* AboutPage.m in Sources */,
@@ -5449,6 +5448,7 @@
 				099823D11C77747C00287549 /* SignUpViewController.m in Sources */,
 				099823D91C77747C00287549 /* MyTweetLikeListViewController.m in Sources */,
 				099823431C77747C00287549 /* TeamDiscussion.m in Sources */,
+				093194051C84286500BCDF95 /* FSObjsViewController.m in Sources */,
 				099823411C77747C00287549 /* OSCComment.m in Sources */,
 				099823111C77747C00287549 /* TeamActivityDetailViewController.m in Sources */,
 				099823DA1C77747C00287549 /* BubbleChatViewController.m in Sources */,
@@ -5457,20 +5457,20 @@
 				099820371C76037900287549 /* UIImage+FontAwesome.m in Sources */,
 				099823641C77747C00287549 /* Utils.m in Sources */,
 				099823471C77747C00287549 /* OSCNewsDetails.m in Sources */,
-				0982B04D1C7F3D9700E6424A /* FSCategory.m in Sources */,
 				099823511C77747C00287549 /* OSCPost.m in Sources */,
+				093194211C84291D00BCDF95 /* FSCategory.m in Sources */,
 				099822F91C77747C00287549 /* MediaViewer.m in Sources */,
 				099820341C76037900287549 /* FAImageView.m in Sources */,
-				0982B04C1C7F3D9700E6424A /* FSThreadViewController.m in Sources */,
 				099823BF1C77747C00287549 /* SXWeatherBgM.m in Sources */,
-				0982B04E1C7F3D9700E6424A /* FSForum.m in Sources */,
-				0982B0501C7F3D9700E6424A /* FSTag.m in Sources */,
+				093194201C84291D00BCDF95 /* FSThreadViewController.m in Sources */,
 				0998235B1C77747C00287549 /* TeamProject.m in Sources */,
+				093194221C84291D00BCDF95 /* FSForum.m in Sources */,
+				093194241C84291D00BCDF95 /* FSTag.m in Sources */,
 				099823381C77747C00287549 /* TweetDetailsWithBottomBarViewController.m in Sources */,
 				099822ED1C77747C00287549 /* SideMenuViewController.m in Sources */,
 				099823921C77747C00287549 /* ContentTableViewCell.m in Sources */,
-				0982B04F1C7F3D9700E6424A /* FSPage.m in Sources */,
 				0998237A1C77747C00287549 /* NaviBase.m in Sources */,
+				093194231C84291D00BCDF95 /* FSPage.m in Sources */,
 				099823781C77747C00287549 /* BuyViewController.m in Sources */,
 				099823211C77747C00287549 /* WeeklyReportViewController.m in Sources */,
 				099822FC1C77747C00287549 /* GYZCity.m in Sources */,
@@ -5498,7 +5498,6 @@
 				099823581C77747C00287549 /* TeamIssue.m in Sources */,
 				099823171C77747C00287549 /* TeamDiscussionViewController.m in Sources */,
 				099823361C77747C00287549 /* TweetDetailsCell.m in Sources */,
-				0982B02F1C7F3D8400E6424A /* FSObjsViewController.m in Sources */,
 				099822FB1C77747C00287549 /* GYZChooseCityController.m in Sources */,
 				099820401C76037900287549 /* UIImageView+Util.m in Sources */,
 				099823191C77747C00287549 /* TeamUserMainCell.m in Sources */,
@@ -5512,9 +5511,9 @@
 				099822D91C77747B00287549 /* SearchResultsViewController.m in Sources */,
 				099822DB1C77747B00287549 /* ActivitiesViewController.m in Sources */,
 				099823C51C77747C00287549 /* WeiboDetailViewController.m in Sources */,
-				0982B0521C7F3D9700E6424A /* FSThreadDetails.m in Sources */,
+				093194261C84291D00BCDF95 /* FSThreadDetails.m in Sources */,
 				0998232E1C77747C00287549 /* TeamMemberViewController.m in Sources */,
-				0982B0511C7F3D9700E6424A /* FSThread.m in Sources */,
+				093194251C84291D00BCDF95 /* FSThread.m in Sources */,
 				099823A11C77747C00287549 /* SXSameNewsEntity.m in Sources */,
 				0998233A1C77747C00287549 /* TweetFriendCell.m in Sources */,
 			);

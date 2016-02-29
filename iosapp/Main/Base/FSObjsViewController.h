@@ -9,44 +9,17 @@
 
 // bill json version base class
 #import <UIKit/UIKit.h>
-
-#import <AFNetworking.h>
-#import <AFOnoResponseSerializer.h>
-#import <Ono.h>
-#import <MJRefresh.h>
-
 #import "Utils.h"
-#import "OSCAPI.h"
-#import "LastCell.h"
-
-//@class ONOXMLDocument;
 
 @interface FSObjsViewController : UITableViewController
 
-//@property (nonatomic, copy) void (^parseExtraInfo)(ONOXMLDocument *);
-@property (nonatomic, copy) NSString * (^generateURL)(NSUInteger page);
-@property (nonatomic, copy) void (^tableWillReload)(NSUInteger responseObjectsCount);
-@property (nonatomic, copy) void (^didRefreshSucceed)();
 
-@property Class objClass;
+@property (nonatomic, copy) NSString * (^generateURL)(int page);
 
-@property (nonatomic, assign) BOOL shouldFetchDataAfterLoaded;
-@property (nonatomic, assign) BOOL needRefreshAnimation;
-@property (nonatomic, assign) BOOL needCache;
-@property (nonatomic, strong) NSMutableArray *objects;
 @property (nonatomic, assign) int allCount;
-@property (nonatomic, strong) LastCell *lastCell;
-@property (nonatomic, strong) UILabel *label;
-@property (nonatomic, assign) NSUInteger page;
+@property (nonatomic, assign) int page;
+@property(nonatomic,strong) NSMutableArray *arrayList;
 
-@property (nonatomic, assign) BOOL needAutoRefresh;
-@property (nonatomic, copy) NSString *kLastRefreshTime;
-@property (nonatomic, assign) NSTimeInterval refreshInterval;
-
-@property (nonatomic, copy) void (^anotherNetWorking)();
-
-//- (NSArray *)parseXML:(ONOXMLDocument *)xml;
-- (void)fetchMore;
-- (void)refresh;
+@property (nonatomic, strong) UILabel *label;// only to calculate row height
 
 @end

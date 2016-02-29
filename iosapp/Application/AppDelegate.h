@@ -22,6 +22,5 @@
 @property (nonatomic, strong) NSMutableArray *menuItems;
 @property (nonatomic, strong) NSMutableArray *tabItems;
 @property (nonatomic, strong) NSMutableArray *actionItems;
-
 @end
 

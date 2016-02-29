@@ -18,6 +18,8 @@
 #define FSAPI_ARTICLE_LIST_BY_DATE      @"&order=postdate"
 #define FSAPI_ARTICLE_LIST_BY_RECOMMEND @"&order=recommend"
 #define FSAPI_ARTICLE_LIST_BY_HOT       @"&order=hot"
+#define FSAPI_ARTICLE_LIST_BY_CATEGORY  @"&categorieId="
+
 #define FSAPI_ARTICLE_DETAIL            @"http://finalshares.com/read-"
 
 // afer loggin, can use api:
@@ -25,8 +27,9 @@
 #define FSAPI_NOTICE                    @"http://finalshares.com/3g-notice-runJson"
 #define FSAPI_MSG                       @"http://finalshares.com/3g-message-runJson"
 
-// loggin
+// loggin need to use post method
 #define FSAPI_LOGIN                     @"http://finalshares.com/3g-login-dorun"
 #define FSAPI_VERIFY_CODE               @"http://finalshares.com/verify-index-getJson"
+#define FSAPI_LOGIN_WITHOUT_CODE        @"http://finalshares.com/3g-login-dorunJson"
 
 #endif

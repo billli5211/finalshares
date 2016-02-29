@@ -10,13 +10,15 @@
 
 typedef NS_ENUM(int, FSType)
 {
-    FSTypeLatest = 1,
+    FSTypeDate = 1,
     FSTypeHot,
-    FSTypeSoution,
+    FSTypeRecommend,
 };
 
 @interface FSThreadViewController : FSObjsViewController
 
 - (instancetype)initWithFSType:(FSType)type;
+- (instancetype)initWithCategory:(int)category;
+
 
 @end
